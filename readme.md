@@ -8,7 +8,7 @@ The Student Success Dashboard is a student‐level data aggregation tool enablin
 
 ##License
 
-Copyright (c) 2013, StriveTogether<br />
+Copyright (c) 2013, StriveTogether, LLC<br />
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
