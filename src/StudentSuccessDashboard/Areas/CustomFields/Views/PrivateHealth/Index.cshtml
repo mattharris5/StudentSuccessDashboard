@@ -1,0 +1,33 @@
+﻿@model SSD.ViewModels.CustomDataModel
+@{
+    ViewBag.Title = "Manage Private and Health Data Fields";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+@section Title{
+    <i class="icon-cog title"></i> @ViewBag.Title
+}
+
+@section buttons{
+    <a id="createPrivateHealthField" class="btn btn-primary btn-mini create-private-health-field" role="button">
+        <i class="icon-plus"></i>Create New Private and Health Field
+    </a>
+}
+
+<table id="privateHealthFields" class="table table-striped table-bordered DataTable table-sort">
+    <thead>
+        <tr>
+            <th>Field Name</th>
+            <th>Data Type</th>
+            <th>Provider</th>
+            <th>Categories</th>
+            <th class="width20">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+@Html.Partial("_Modal")

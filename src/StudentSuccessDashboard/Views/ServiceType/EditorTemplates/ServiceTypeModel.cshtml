@@ -1,0 +1,17 @@
+﻿@model SSD.ViewModels.ServiceTypeModel
+<form id="add-svcs">
+    @Html.HiddenFor(m => m.Id)
+    <ul class="form">
+        <li class="clearfix"><label><i class="icon-asterisk required"></i> Service Type Name:</label> @Html.EditorFor(m => m.Name) @Html.ValidationMessageFor(m => m.Name)</li>
+        <li class="clearfix"><label>Description:</label> @Html.TextAreaFor(m => m.Description)</li>
+        <li class="clearfix">
+            <label>Programs:</label>
+            @Html.ListBoxFor(model => model.SelectedPrograms, Model.Programs, new { title = "Select Programs" })
+        </li>
+        @if(Model.IsAdministrator)
+        {
+            <li class="clearfix"><label>Privacy:</label> @Html.CheckBoxFor(m => m.IsPrivate)&nbspMark Private</li>
+        }
+        <li>@Html.ValidationSummary()</li>
+    </ul>
+</form>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SSD.ViewModels.ServiceTypeMetricModel>
+<table class="vert-bar-chart generic">
+    <thead>
+        <tr>
+            <th class="st">Service Type</th>
+            <th class="pro">
+                Provider
+                <i class="icon icon-info-sign" data-original-title="# of providers servicing students." rel="tooltip"></i>
+            </th>
+            <th class="pb">Percent of Students Being Served</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td class="st">@item.ServiceTypeName</td>
+            <td class="pro">@item.ProviderCount</td>
+            <td class="pb">
+                <div class="progress">
+                    <div class="bar" style="width: @item.PercentOfStudentsBeingServed%;">@item.PercentOfStudentsBeingServed%</div>
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(function () {
+        $("[rel='tooltip']").tooltip();
+    });
+</script>

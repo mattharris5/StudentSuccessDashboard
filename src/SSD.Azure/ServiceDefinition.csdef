@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="SSD.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+  <WebRole name="StudentSuccessDashboard" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="WebBinding" endpointName="WebsiteEndpoint" />
+          <Binding name="HttpsIn" endpointName="HttpsIn" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="WebsiteEndpoint" protocol="http" port="80" />
+      <InputEndpoint name="HttpsIn" protocol="https" port="443" certificate="SiteCertificate" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="Caching" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="AdministratorEmailAddresses" />
+      <Setting name="AcsNamespace" />
+      <Setting name="BlobCleanupInterval" />
+      <Setting name="StorageConnectionString" />
+      <Setting name="DatabaseConnectionString" />
+      <Setting name="ServiceOfferingFileContainerName" />
+      <Setting name="CustomDataFileContainerName" />
+      <Setting name="EnableDataLayerCaching" />
+      <Setting name="EnableDataLayerTracing" />
+      <Setting name="StudentProfileExportFooter" />
+      <Setting name="FileUploadTemplatePath" />
+      <Setting name="CacheClientName" />
+      <Setting name="EmailConfirmationFromAddress" />
+      <Setting name="EmailConfirmationFromName" />
+      <Setting name="EmailConfirmationSubject" />
+      <Setting name="EmailConfirmationBodyPlainText" />
+      <Setting name="EmailConfirmationBodyHtml" />
+      <Setting name="SmtpHost" />
+      <Setting name="SmtpPort" />
+      <Setting name="SmtpUserName" />
+      <Setting name="SmtpPassword" />
+      <Setting name="SupportEmailAddress" />
+      <Setting name="SupportHelpDesk" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="SiteCertificate" storeLocation="LocalMachine" storeName="My" />
+    </Certificates>
+    <LocalResources>
+      <LocalStorage name="CustomLogFiles" sizeInMB="10" cleanOnRoleRecycle="false" />
+      <LocalStorage name="DiagnosticStore" sizeInMB="20000" cleanOnRoleRecycle="false" />
+    </LocalResources>
+  </WebRole>
+</ServiceDefinition>

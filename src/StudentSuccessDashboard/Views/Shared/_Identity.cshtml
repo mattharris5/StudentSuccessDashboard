@@ -1,0 +1,32 @@
+﻿<div id="user" class="dropdown">
+    @if (User.Identity.IsAuthenticated)
+    {
+        var identity = User.Identity as SSD.Security.EducationSecurityIdentity;
+        if (identity == null)
+        {
+            <text>Welcome, </text><a class="dropdown-toggle" id="dNamedUserConsole" role="button" data-toggle="dropdown" data-target="#" href="#">
+                Authenticated User
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li>@Html.ActionLink("View/Edit Profile", "UserProfile", "Account")</li>
+                <li>@Html.ActionLink("Logout", "LogOff", "Account")</li>
+            </ul>
+        }
+        else
+        {
+            <text>Welcome, </text><a class="dropdown-toggle" id="dUserConsole" role="button" data-toggle="dropdown" data-target="#" href="#">
+                @identity.UserEntity.DisplayName
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li>@Html.ActionLink("View/Edit Profile", "UserProfile", "Account")</li>
+                <li>@Html.ActionLink("Logout", "LogOff", "Account")</li>
+            </ul>
+        }
+    }
+    else
+    {
+        <text>Welcome, Anonymous | @Html.ActionLink("Login", "LogOn", "Account")</text>
+    }
+</div>

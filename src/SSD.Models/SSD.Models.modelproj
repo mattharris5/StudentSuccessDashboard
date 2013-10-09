@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{883e3270-9fc2-4bb3-addf-4c2d79b39d75}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>SSD.Models</Name>
+    <RootNamespace>Strive.SSD.Models</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <ValidateArchitecture>
+    </ValidateArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\SSD.Models.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="System.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="System.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>System.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="System.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>System.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSD.Application\SSD.Application.csproj">
+      <Name>SSD.Application</Name>
+      <Project>{a550ff90-892e-4587-87e3-fc0a6262fdc8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Business\SSD.Business.csproj">
+      <Name>SSD.Business</Name>
+      <Project>{cae3cbf8-227d-4936-b12e-3afa506c3aa0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Data\SSD.Data.csproj">
+      <Name>SSD.Data</Name>
+      <Project>{b6ae5a13-cb52-454f-9272-c053b4c04510}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Domain\SSD.Domain.csproj">
+      <Name>SSD.Domain</Name>
+      <Project>{ef2ac962-368a-4a39-9d68-c16531a78660}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Presentation\SSD.Presentation.csproj">
+      <Name>SSD.Presentation</Name>
+      <Project>{c6c6ab79-1aa3-4222-986b-a5a34ee5f5ea}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Repositories\SSD.Repositories.csproj">
+      <Name>SSD.Repositories</Name>
+      <Project>{a7ca8f40-8887-4161-bbc6-223970d3dd68}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Security\SSD.Security.csproj">
+      <Name>SSD.Security</Name>
+      <Project>{8205853a-f6c0-4a66-bf99-247196a995bf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSuccessDashboard\StudentSuccessDashboard.csproj">
+      <Name>StudentSuccessDashboard</Name>
+      <Project>{1cfe029c-33b1-4b62-a50f-2ad616bcef3a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

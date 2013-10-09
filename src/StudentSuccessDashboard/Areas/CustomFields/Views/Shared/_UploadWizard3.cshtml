@@ -1,0 +1,34 @@
+﻿@model SSD.ViewModels.UploadWizardCompleteModel
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th colspan="3">Errors 
+                @if(Model.ErrorDownloadFile != null)
+                {
+                    @Html.ActionIconLink("Download Custom Field Errors", "DownloadUploadErrors", ViewContext.RouteData.Values["controller"].ToString(), "icon-download", new { area = "CustomFields", id = Model.ErrorDownloadFile.BlobAddress }, new { @class = "btn btn-warning btn-mini btnFileError" });
+                }
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var error in Model.RowErrors)
+        {
+            <tr>
+                <td colspan="3"><i class="icon-chevron-right"></i> @error</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>
+                <strong>Processed Updates: </strong> @Model.ProcessedRowCount
+            </td>
+            <td>
+                <strong>Successful Updates: </strong> @Model.SuccessfulRowsCount
+            </td>
+            <td>
+                <strong>Errored Rows: </strong> @Model.RowErrors.Count
+            </td>
+        </tr>
+    </tfoot>
+</table>

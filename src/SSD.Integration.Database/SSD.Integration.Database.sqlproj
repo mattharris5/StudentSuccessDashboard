@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+    <GenerateSqlClrDdl>False</GenerateSqlClrDdl>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SSD.Integration.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a3bad65e-70c4-4398-b2e0-b2d794af053a}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SSD</RootNamespace>
+    <AssemblyName>SSD.Integration.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>True</SqlServerVerification>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+    <SuppressTSqlWarnings>
+    </SuppressTSqlWarnings>
+    <OutputPath>bin\Debug\</OutputPath>
+    <SqlCodeAnalysisRules>+!Microsoft.Rules.Data.SR0009;+!Microsoft.Rules.Data.SR0012;+!Microsoft.Rules.Data.SR0014;+!Microsoft.Rules.Data.SR0008;+!Microsoft.Rules.Data.SR0010;+!Microsoft.Rules.Data.SR0013;+!Microsoft.Rules.Data.SR0001;+!Microsoft.Rules.Data.SR0011;+!Microsoft.Rules.Data.SR0016;+!Microsoft.Rules.Data.SR0015;-Microsoft.Rules.Data.SR0007</SqlCodeAnalysisRules>
+    <TreatTSqlWarningsAsErrors>True</TreatTSqlWarningsAsErrors>
+    <SqlTargetName>SSD</SqlTargetName>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schemas" />
+    <Folder Include="Scripts" />
+    <Folder Include="SSD" />
+    <Folder Include="SSD\Tables" />
+    <Folder Include="Queue" />
+    <Folder Include="Queue\StoredProcedures" />
+    <Folder Include="Queue\Tables" />
+    <Folder Include="TestData" />
+    <Folder Include="TestData\Tables" />
+    <Folder Include="SSD\StoredProcedures" />
+    <Folder Include="TestData\StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\UsefulScripts.sql" />
+    <Build Include="Schemas\TestData.sql" />
+    <Build Include="Queue\StoredProcedures\MergeClassToSSD.sql" />
+    <Build Include="Queue\StoredProcedures\MergeSchoolToSSD.sql" />
+    <Build Include="Queue\StoredProcedures\MergeStudentClassesToSSD.sql" />
+    <Build Include="Queue\StoredProcedures\MergeStudentToSSD.sql" />
+    <Build Include="Queue\StoredProcedures\MergeTeacherToSSD.sql" />
+    <Build Include="Queue\StoredProcedures\ProcessQueues.sql" />
+    <Build Include="Queue\Tables\Class.sql" />
+    <Build Include="Queue\Tables\MergeLog.sql" />
+    <Build Include="Queue\Tables\School.sql" />
+    <Build Include="Queue\Tables\Student.sql" />
+    <Build Include="Queue\Tables\StudentClasses.sql" />
+    <Build Include="Queue\Tables\Teacher.sql" />
+    <Build Include="Schemas\Queue.sql" />
+    <Build Include="TestData\Tables\Class.sql" />
+    <Build Include="TestData\Tables\School.sql" />
+    <Build Include="TestData\Tables\Student.sql" />
+    <Build Include="TestData\Tables\StudentClasses.sql" />
+    <Build Include="TestData\Tables\Teacher.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="SSD">
+      <DefaultValue>SSD</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Install.sql" />
+    <None Include="Scripts\InstallTestData.sql" />
+    <Build Include="Schemas\SSD.sql" />
+    <Build Include="SSD\Tables\Category.sql" />
+    <Build Include="SSD\Tables\Class.sql" />
+    <Build Include="SSD\Tables\CustomDataOrigin.sql" />
+    <Build Include="SSD\Tables\CustomField.sql" />
+    <Build Include="SSD\Tables\CustomFieldCategory.sql" />
+    <Build Include="SSD\Tables\CustomFieldCategoryMapping.sql" />
+    <Build Include="SSD\Tables\CustomFieldType.sql" />
+    <Build Include="SSD\Tables\CustomFieldValue.sql" />
+    <Build Include="SSD\Tables\EulaAcceptance.sql" />
+    <Build Include="SSD\Tables\EulaAgreement.sql" />
+    <Build Include="SSD\Tables\FavoriteServiceOffering.sql" />
+    <Build Include="SSD\Tables\FulfillmentStatus.sql" />
+    <Build Include="SSD\Tables\LoginEvent.sql" />
+    <Build Include="SSD\Tables\Priority.sql" />
+    <Build Include="SSD\Tables\PrivateHealthDataViewEventsCustomFieldValues.sql" />
+    <Build Include="SSD\Tables\PrivateHealthField.sql" />
+    <Build Include="SSD\Tables\PrivateHealthInfoViewEvent.sql" />
+    <Build Include="SSD\Tables\Program.sql" />
+    <Build Include="SSD\Tables\Property.sql" />
+    <Build Include="SSD\Tables\Provider.sql" />
+    <Build Include="SSD\Tables\PublicField.sql" />
+    <Build Include="SSD\Tables\Role.sql" />
+    <Build Include="SSD\Tables\School.sql" />
+    <Build Include="SSD\Tables\SchoolProviders.sql" />
+    <Build Include="SSD\Tables\ServiceAttendance.sql" />
+    <Build Include="SSD\Tables\ServiceOffering.sql" />
+    <Build Include="SSD\Tables\ServiceRequest.sql" />
+    <Build Include="SSD\Tables\ServiceRequestFulfillment.sql" />
+    <Build Include="SSD\Tables\ServiceType.sql" />
+    <Build Include="SSD\Tables\ServiceTypeCategories.sql" />
+    <Build Include="SSD\Tables\Student.sql" />
+    <Build Include="SSD\Tables\StudentAssignedOffering.sql" />
+    <Build Include="SSD\Tables\StudentClasses.sql" />
+    <Build Include="SSD\Tables\StudentProviders.sql" />
+    <Build Include="SSD\Tables\Subject.sql" />
+    <Build Include="SSD\Tables\Teacher.sql" />
+    <Build Include="SSD\Tables\User.sql" />
+    <Build Include="SSD\Tables\UserAccessChangeEvent.sql" />
+    <Build Include="SSD\Tables\UserRoleProviders.sql" />
+    <Build Include="SSD\Tables\UserRoles.sql" />
+    <Build Include="SSD\Tables\UserRoleSchools.sql" />
+    <None Include="TestData\SSD-TestData-All.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Queue\StoredProcedures\CountRecords.sql" />
+    <Build Include="SSD\StoredProcedures\CountRecords.sql" />
+    <Build Include="TestData\StoredProcedures\CountRecords.sql" />
+    <Build Include="TestData\StoredProcedures\MoveDataToQueues.sql" />
+  </ItemGroup>
+</Project>

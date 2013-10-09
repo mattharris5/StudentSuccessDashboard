@@ -1,0 +1,35 @@
+﻿@model SSD.ViewModels.ServiceRequestModel
+<form id="flagModalBody">
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.OriginalStatusId)
+    @if (User.IsInRole("Provider"))
+    {
+        @Html.HiddenFor(model => model.SelectedServiceTypeId)
+        @Html.HiddenFor(model => model.SelectedSubjectId)
+        @Html.HiddenFor(model => model.SelectedPriorityId)
+        @Html.HiddenFor(model => model.Notes)
+        @Html.HiddenFor(model => model.SelectedAssignedOfferingId)
+    }
+    @foreach (int i in Model.StudentIds)
+    {
+        @Html.Hidden("StudentIds", i)
+    }
+    <ul class="form">
+        @if (!User.IsInRole("Provider"))
+        {
+            <li class="clearfix"><label><i class="icon-asterisk required"></i> Service Type:</label> @Html.DropDownListFor(model => model.SelectedServiceTypeId, Model.ServiceTypes)</li>
+            <li class="clearfix"><label>Subject:</label> @Html.DropDownListFor(model => model.SelectedSubjectId, Model.Subjects) @Html.ValidationMessageFor(m => m.SelectedSubjectId)</li>
+            <li class="clearfix"><label>Priority:</label> @Html.DropDownListFor(model => model.SelectedPriorityId, Model.Priorities) @Html.ValidationMessageFor(m => m.SelectedPriorityId)</li>
+            <li class="clearfix"><label>General Notes:</label> @Html.TextAreaFor(model => model.Notes)</li>
+        }
+        @if (Model.Id != 0)
+        {
+            if (!User.IsInRole("Provider"))
+            {
+                <li class="clearfix"><label>Assigned Service Offerings:</label>@Html.DropDownListFor(model => model.SelectedAssignedOfferingId, Model.AssignedOfferings, "None")</li>
+            }
+            <li class="clearfix"><label>Status:</label>@Html.DropDownListFor(model => model.SelectedStatusId, Model.Statuses)</li>
+            <li class="clearfix"><label>Fulfillment Reason:</label>@Html.TextAreaFor(model => model.FulfillmentNotes)@Html.ValidationSummary()</li>
+        }
+    </ul>
+</form>

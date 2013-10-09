@@ -1,0 +1,17 @@
+﻿@model SSD.ViewModels.PrivateHealthFieldModel
+<form id="form-addedit">
+    <ul class="form">
+        @Html.HiddenFor(m => m.Id)
+        <li class="clearfix"><label><i class="icon-asterisk required"></i> Field Name:</label>@Html.TextBoxFor(m => m.FieldName) @Html.ValidationMessageFor(m => m.FieldName)</li>
+        <li class="clearfix"><label><i class="icon-asterisk required"></i> Data Type:</label>@Html.DropDownListFor(m => m.SelectedFieldTypeId, Model.FieldTypes, "Select...") @Html.ValidationMessageFor(m => m.SelectedFieldTypeId)</li>
+        <li class="clearfix"><label>Provider:</label>@Html.DropDownListFor(m => m.SelectedProviderId, Model.Providers, "Select...") @Html.ValidationMessageFor(m => m.SelectedProviderId)</li>
+        <li class="clearfix">
+            <label><i class="icon-asterisk required"></i> Categories:</label>
+            <ul class="categories">
+                <li>
+                    @Html.ListBoxFor(m => m.SelectedCategories, Model.Categories, new { title = "Select..." }) @Html.ValidationMessageFor(m => m.SelectedCategories)
+                </li>
+            </ul>
+        </li>
+    </ul>
+</form>

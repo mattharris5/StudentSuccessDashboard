@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SSD.Domain.Address">
+    <Position X="6.75" Y="5.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Domain\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Category">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Class">
+    <Position X="6.75" Y="3" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAMCAAAAAAAAAAAAAEAAAAQAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Class.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Contact">
+    <Position X="5.75" Y="11.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Domain\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.CustomDataOrigin" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="8.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAEQEAAAAAAAAAJAAAA=</HashCode>
+      <FileName>Domain\CustomDataOrigin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.CustomField" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABACAQAAAAAAAAAAAAgAAAQAAAEEEAAAQAAAAAIAAAA=</HashCode>
+      <FileName>Domain\CustomField.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.CustomFieldCategory">
+    <Position X="4.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Domain\CustomFieldCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.CustomFieldType">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\CustomFieldType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.CustomFieldValue">
+    <Position X="0.5" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAABCAAAAAAAAAAhAAAAAAAAAAgAAQCAAA=</HashCode>
+      <FileName>Domain\CustomFieldValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.FulfillmentStatus">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\FulfillmentStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.LoginEvent">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\LoginEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.Priority">
+    <Position X="10.5" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Priority.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Program">
+    <Position X="8.5" Y="5.25" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAAAYgAAAAAAAAIAAABEAAAAA=</HashCode>
+      <FileName>Domain\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Property">
+    <Position X="17" Y="10.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Property.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Provider">
+    <Position X="14.5" Y="9.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAGAAAAAQCAAAABAgCAAAABAAAAAA=</HashCode>
+      <FileName>Domain\Provider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Role">
+    <Position X="10.25" Y="11" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.School">
+    <Position X="6.75" Y="0.5" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAEAAAAAAAAAAQAAAAAAAwAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\School.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.ServiceAttendance">
+    <Position X="7.25" Y="8.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAiAQAgEAACAAAAAIAAAAAAAAEEEAIAAAAAAAIACAA=</HashCode>
+      <FileName>Domain\ServiceAttendance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.ServiceOffering">
+    <Position X="14.5" Y="5.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAKAQAACEAEAAAAFAIAAAQAAAAAAAIIAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\ServiceOffering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.ServiceRequest" BaseTypeListCollapsed="true">
+    <Position X="10" Y="6.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAqAQAAUAAAAAAEAIIAIAAEAAEEEAAAAAAAAAICAAA=</HashCode>
+      <FileName>Domain\ServiceRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.ServiceRequestFulfillment">
+    <Position X="12" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAABEAAIAIAAAAAAAAAAEAEAAAEAAAAAMAAAA=</HashCode>
+      <FileName>Domain\ServiceRequestFulfillment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.ServiceType">
+    <Position X="16.75" Y="7.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAgAAAAEAAAAAQAAAAAEAAAAAAABAAAAAA=</HashCode>
+      <FileName>Domain\ServiceType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Student">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAEAIAAEAgIAAAgAQAAAAAAAQAAIAQAAACAEIACk=</HashCode>
+      <FileName>Domain\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.StudentAssignedOffering" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAiAQCAQAAAAAAAEAAAAAAgIAEEEAEAAAAAAMICAAA=</HashCode>
+      <FileName>Domain\StudentAssignedOffering.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.Subject">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Domain\Subject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.Teacher">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACAAAAAAAEAQAAAAAAAAAAABAAAAIAAAAAg=</HashCode>
+      <FileName>Domain\Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.UserRole">
+    <Position X="2.5" Y="2.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABADAQIAAAAEAAAAEAAAAAgCAAEEEAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\UserRole.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.UserAccessChangeEvent">
+    <Position X="5" Y="7.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAABAAAAAAgAAAEAkgAAAAgAAAIAAAA=</HashCode>
+      <FileName>Domain\UserAccessChangeEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.EulaAcceptance">
+    <Position X="16.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAEAEACAAAAAAAYAAAA=</HashCode>
+      <FileName>Domain\EulaAcceptance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.EulaAgreement">
+    <Position X="16.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAIAgAA=</HashCode>
+      <FileName>Domain\EulaAgreement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.PrivateHealthDataViewEvent">
+    <Position X="12" Y="9.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAAAAAEAEAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\PrivateHealthDataViewEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SSD.Domain.PrivateHealthField">
+    <Position X="0.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\PrivateHealthField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.PublicField">
+    <Position X="2.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\PublicField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSD.Domain.User">
+    <Position X="12" Y="4" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAASGEEEEAgAAAiAAAAAEAAAgAEAAAggIAABggAgMAg=</HashCode>
+      <FileName>Domain\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SSD.Domain.IAuditCreate">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Domain\IAuditCreate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SSD.Domain.IAuditModify">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\IAuditModify.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,51 @@
+﻿@model SSD.ViewModels.ServiceTypeListOptionsModel
+@{
+    ViewBag.Title = "Manage Service Types";
+    Layout = "~/Views/Shared/_DoubleColumnLayout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+
+@section Title{
+    <i class="icon-cog title"></i> @ViewBag.Title
+}
+
+@section buttons{
+    @if (Model.AllowModifying)
+    {
+        <a id="addServiceType" class="btn btn-large btn-primary" role="button" data-toggle="modal"><i class="icon-plus"></i> Add Service Type</a>
+    }
+}
+
+@section SideContent{
+    <h5><i class="icon-search"></i> Search</h5>
+    <ul class="vert-form filter-wrap-inner">
+        <li>
+            <label><h5>Service Type Name:</h5></label>
+            <input name="autocompleteServiceTypeName" id="autocompleteServiceTypeName" type="text">
+        </li>
+    </ul>
+}
+
+<div id="FilterHeader"></div>
+<table class="table table-striped table-bordered table-sort" id="serviceTypes"> 
+	<thead>
+		<tr>
+            <th class="width5">Private</th>
+            <th>Service Type Name</th>
+            <th>Programs</th>
+            <th>Description</th>
+        @if (Model.AllowModifying)
+        {
+            <th class="nosort">Action</th>
+        }
+		</tr>
+	</thead>
+	<tbody>
+    </tbody>
+</table>
+@if (Model.AllowModifying)
+{
+    @Html.Partial("_Modal")
+}

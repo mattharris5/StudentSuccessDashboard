@@ -1,0 +1,33 @@
+﻿<div id="myCarousel" class="carousel slide pause dash-block">
+    <div class="sub w-controls clearfix">
+        <h4>
+            Service Requests by School
+            <small>(Current School Year)</small>
+        </h4>
+        <div class="carousel-nav btn-group">
+            <a class="btn btn-mini" data-slide="prev" href="#myCarousel">
+                <i class="icon-chevron-left"></i>
+            </a>
+            <a class="btn btn-mini" data-slide="next" href="#myCarousel">
+                <i class="icon-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="carousel-inner" id="service-request-carousel">
+    </div>
+</div>
+
+<script type="text/javascript">
+    widgets.push({
+        Initialize: function () {
+            $.ajax({
+                url: '/Widget/ServiceRequestsBySchool',
+                success: function (data) {
+                    $('#service-request-carousel').html(data);
+                    $('.carousel').carousel('pause');
+                }
+            })
+        }
+    });
+</script>
+

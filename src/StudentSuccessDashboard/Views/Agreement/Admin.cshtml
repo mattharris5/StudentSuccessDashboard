@@ -1,0 +1,16 @@
+﻿@model SSD.ViewModels.EulaModel
+@{
+    ViewBag.Title = "EULA Administration";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title{
+    <i class="icon-file-text title"></i> @ViewBag.Title
+}
+@using (Html.BeginForm())
+{
+    <div id="eulaText">
+        <h4>Current EULA Text:</h4>
+        @Html.EditorFor(m => m.EulaText) @Html.ValidationMessageFor(m => m.EulaText)
+        <button id="btnEula" class="btn" type="submit" name="Eula">Update</button>
+    </div>
+}

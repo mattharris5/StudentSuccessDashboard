@@ -1,0 +1,50 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+    ViewBag.IsWide = true;
+    ViewBag.Title = "Error";
+}
+@section Title {
+    @ViewBag.Title
+}
+<figure id="error">
+    <img src="@Url.Content("~/Content/images/interwebs.jpg")" alt="Error" width="600" height="389">
+    <figcaption>
+        <p>OK, it's probably not your fault, but something has gone horribly wrong.</p> 
+        <p>Please contact the <a href="mailto:@Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("SupportEmailAddress")">support team</a> to report the issue if it does not resolve itself.</p>
+    </figcaption>
+</figure>
+@if (Request.IsLocal || User.IsInRole(SSD.SecurityRoles.Administrator))
+{
+    <hr />
+    <p>Status Code: @Response.StatusCode</p>
+    if (Model == null)
+    {
+        <p>No exception details are available.</p>
+    }
+    else
+    {
+        <p>Controller: @Model.ControllerName</p>
+        <p>Action: @Model.ActionName</p>
+        if (Model.Exception == null)
+        {
+            <p>Exception was null.</p>
+        }
+        else
+        {
+            Stack<Exception> exceptions = new Stack<Exception>();
+            Exception current = Model.Exception;
+            while (current != null)
+            {
+                exceptions.Push(current);
+                current = current.InnerException;
+            }
+            while (exceptions.Count > 0)
+            {
+                current = exceptions.Pop();
+                <pre>[@current.GetType().FullName: @current.Message]
+@current.StackTrace.ToString()</pre>
+            }
+        }
+    }
+}

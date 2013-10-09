@@ -1,0 +1,8 @@
+﻿@model SSD.ViewModels.ProgramModel
+<form id="form-addedit">
+    @Html.HiddenFor(m => m.Id)
+    <ul class="form">
+        <li class="clearfix">Are you sure you wish to delete <strong id="Name">@Model.Name</strong>?</li>
+        <li>@Html.ValidationSummary()</li>
+    </ul>
+</form>

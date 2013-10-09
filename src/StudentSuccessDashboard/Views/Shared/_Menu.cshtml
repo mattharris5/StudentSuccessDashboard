@@ -1,0 +1,69 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+                @if (User.IsInRole(SSD.SecurityRoles.DataAdmin) || User.IsInRole(SSD.SecurityRoles.SiteCoordinator) || User.IsInRole(SSD.SecurityRoles.Provider))
+                {
+                    <li>@Html.ActionLink("Dashboard", "Index", "Home", new { area = string.Empty }, null)</li>
+                    <li class="divider-vertical"></li>
+                    <li>@Html.ActionLink("Students", "Index", "Student", new { area = string.Empty }, null)</li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="dServices" role="button" data-toggle="dropdown" data-target="#" href="#">
+                            Services <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dServices">
+                            <li>@Html.ActionLink("Manage Service Types", "Index", "ServiceType", new { area = string.Empty }, new { role = "menuitem" })</li>
+                            <li>@Html.ActionLink("Manage Providers and Programs", "Index", "Partners", new { area = "Partners" }, new { role = "menuitem" })</li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="dData" role="button" data-toggle="dropdown" data-target="#" href="#">
+                            Data <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dData">
+                            <li>@Html.ActionLink("Upload Assigned Services", "Index", "ServiceOffering", new { area = string.Empty }, new { role = "menuitem" })</li>
+                            @if (User.IsInRole(SSD.SecurityRoles.DataAdmin) || User.IsInRole(SSD.SecurityRoles.SiteCoordinator))
+                            {
+                                <li>@Html.ActionLink("Manage Public Data Fields", "Index", "Public", new { area = "CustomFields" }, new { role = "menuitem" })</li>
+                                if (User.IsInRole(SSD.SecurityRoles.DataAdmin))
+                                {
+                                    <li>@Html.ActionLink("Manage Private and Health Data Fields", "Index", "PrivateHealth", new { area = "CustomFields" }, new { role = "menuitem" })</li>
+                                }
+                            }
+                            <li>@Html.ActionLink("Public Data File Upload Wizard", "UploadWizard", "Public", new { area = "CustomFields" }, new { role = "menuitem" })</li>
+                            @if (User.IsInRole(SSD.SecurityRoles.DataAdmin) || User.IsInRole(SSD.SecurityRoles.Provider))
+                            {
+                                <li>@Html.ActionLink("Private and Health Data File Upload Wizard", "UploadWizard", "PrivateHealth", new { area = "CustomFields" }, new { role = "menuitem" })</li>
+                            }
+                            <li>@Html.ActionLink("Generate Student Profile Export", "StudentProfileExport", "DataFile", new { area = string.Empty }, new { role = "menuitem" })</li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                }
+                @if (User.IsInRole(SSD.SecurityRoles.DataAdmin) || User.IsInRole(SSD.SecurityRoles.Administrator))
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="dUsers" role="button" data-toggle="dropdown" data-target="#" href="#">
+                            Admin <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dUsers">
+                            <li>@Html.ActionLink("Manage User Roles", "Index", "User", new { area = string.Empty }, new { role = "menuitem" })</li>
+                            @if (User.IsInRole(SSD.SecurityRoles.DataAdmin))
+                            {
+                                <li>@Html.ActionLink("Manage Student Approvals", "Index", "StudentApproval", new { area = string.Empty }, new { role = "menuitem" })</li>
+                            }
+                            @if (User.IsInRole(SSD.SecurityRoles.DataAdmin))
+                            {
+                                <li>@Html.ActionLink("EULA Admin Page", "Admin", "Agreement", new { area = string.Empty }, new { role = "menuitem" })</li>
+                            }
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                }
+            </ul>
+        </div>
+    </nav>
+}

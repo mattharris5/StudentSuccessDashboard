@@ -1,0 +1,32 @@
+﻿@model SSD.ViewModels.CustomDataModel
+@{
+    ViewBag.Title = "Manage Public Data Fields";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+@section Title{
+    <i class="icon-cog title"></i> @ViewBag.Title
+}
+
+@section buttons{
+    <a id="createPublicField" class="btn btn-primary btn-mini create-public-field" role="button">
+        <i class="icon-plus"></i>Create New Public Field
+    </a>
+}
+
+<table id="publicFields" class="table table-striped table-bordered DataTable table-sort">
+    <thead>
+        <tr>
+            <th>Field Name</th>
+            <th>Data Type</th>
+            <th>Categories</th>
+            <th class="width20">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+@Html.Partial("_Modal")

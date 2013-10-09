@@ -1,0 +1,965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSD</RootNamespace>
+    <AssemblyName>StudentSuccessDashboard</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.AzureClientHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.AzureClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.AzureCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.AzureCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.ApplicationServer.Caching.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.DistributedCache, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.Web.DistributedCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.2.0.6.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsFabric.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.WindowsFabric.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsFabric.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.1.0.0\lib\net40-full\Microsoft.WindowsFabric.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcCheckBoxList, Version=1.4.4.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvcCheckBoxList.1.4.4.4\lib\net45\MvcCheckBoxList.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DependencyInjectionConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\CustomFields\CustomFieldsAreaRegistration.cs" />
+    <Compile Include="Areas\Partners\PartnersAreaRegistration.cs" />
+    <Compile Include="DependencyInjection\MailerInstaller.cs" />
+    <Compile Include="DependencyInjection\EmailConfirmationManagerInstaller.cs" />
+    <Compile Include="DependencyInjection\WindsorContainerInstaller.cs" />
+    <Compile Include="DependencyInjection\SecurityConfigurationInstaller.cs" />
+    <Compile Include="DependencyInjection\WindsorControllerFactory.cs" />
+    <Compile Include="DependencyInjection\WindsorDependencyResolver.cs" />
+    <Compile Include="WebRole.cs" />
+    <Content Include="Content\bootstrap\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.9.4-Overrides\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\css\AutoFill.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\images\filler.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\css\ColReorder.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\images\insert.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVis.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVisAlt.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\images\button.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\css\dataTables.scroller.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\images\loading-background.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools_JUI.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\background.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls.swf" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_page.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_table.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_table_jui.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\favicon.ico" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\images\about.jpg" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyInjection\ControllerInstaller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\FontAwesome\css\font-awesome-ie7.css" />
+    <Content Include="Content\FontAwesome\css\font-awesome.css" />
+    <Content Include="Content\FontAwesome\font\fontawesome-webfont.svg" />
+    <Content Include="Content\images\header-bg.png" />
+    <Content Include="Content\images\screenshot-dashboard-lg.jpg" />
+    <Content Include="Content\images\screenshot-dashboard.jpg" />
+    <Content Include="Content\images\screenshot-user-roles-lg.png" />
+    <Content Include="Content\images\screenshot-user-roles.png" />
+    <Content Include="Content\images\student.png" />
+    <Content Include="Content\images\classroom.jpg" />
+    <Content Include="Content\images\windows-live-logo.png" />
+    <Content Include="Content\qunit.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="FederationMetadata\2007-06\FederationMetadata.xml" />
+    <Content Include="Content\images\interwebs.jpg" />
+    <Content Include="Content\images\notfound.jpg" />
+    <Content Include="Content\images\unauthorized.jpg" />
+    <Content Include="App_Data\Uploads\Templates\StudentProfileExportTemplate.xltx" />
+    <Content Include="Areas\CustomFields\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\Index.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Shared\_UploadWizard.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Shared\_UploadWizard2.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Shared\_UploadWizard3.cshtml" />
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\Create.cshtml" />
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\Delete.cshtml" />
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\Edit.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Shared\EditorTemplates\PrivateHealthFieldModel.cshtml" />
+    <Content Include="Certificates\SiteCertificate.pfx" />
+    <None Include="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Microsoft.WindowsAzure.Caching\PerformanceCounters.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Bootstrap\bootstrapx-clickover.js" />
+    <Content Include="Content\bootstrap\bsmselect.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\DT_bootstrap.css" />
+    <Content Include="Content\images\gradient.png" />
+    <Content Include="Content\Main.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\FontAwesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\FontAwesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\FontAwesome\font\fontawesome-webfont.woff" />
+    <Content Include="Scripts\Bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\DataTables-1.9.4-Overrides\TableTools.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\ZeroClipboard.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\DT_bootstrap.js" />
+    <Content Include="Scripts\jQuery\jquery-migrate-1.1.1.js" />
+    <Content Include="Scripts\jQuery\jquery-migrate-1.1.1.min.js">
+      <DependentUpon>jquery-migrate-1.1.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery.bsmselect.min.js">
+      <DependentUpon>jquery.bsmselect.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery.multiOpenAccordion.min.js">
+      <DependentUpon>jquery.multiOpenAccordion.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery.suggestion-text.min.js">
+      <DependentUpon>jquery.suggestion-text.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jQuery\jquery.unobtrusive-ajax.min.js">
+      <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery-1.10.1.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js.gz" />
+    <Content Include="Content\DataTables-1.9.4\media\images\Sorting icons.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\printer.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\file_types.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\copy document.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\collection.psd" />
+    <Content Include="Content\DataTables-1.9.4-Overrides\copy_csv_xls_pdf.as" />
+    <Content Include="App_Data\Uploads\Templates\AssignedServiceOffering.xltx" />
+    <Content Include="App_Data\Uploads\Templates\ServiceAttendance.xltx" />
+    <Content Include="Areas\Partners\Views\Web.config" />
+    <Content Include="Areas\Partners\Views\Program\Create.cshtml" />
+    <Content Include="Areas\Partners\Views\Program\EditorTemplates\ProgramModel.cshtml" />
+    <Content Include="Areas\Partners\Views\Program\Edit.cshtml" />
+    <Content Include="Areas\Partners\Views\Program\Delete.cshtml" />
+    <None Include="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\jQuery\jquery-1.10.1.intellisense.js">
+      <DependentUpon>jquery-1.10.1.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\jQuery\jquery-1.10.1.min.js">
+      <DependentUpon>jquery-1.10.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery-1.10.1.min.map">
+      <DependentUpon>jquery-1.10.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jQuery\jquery-ui-1.10.3.min.js">
+      <DependentUpon>jquery-ui-1.10.3.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery.suggestion-text.js" />
+    <Content Include="Scripts\jQuery\jquery.bsmselect.js" />
+    <Content Include="Scripts\jQuery\jquery.multiOpenAccordion.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.js" />
+    <Content Include="Scripts\jQuery\jquery.unobtrusive-ajax.min.js.map">
+      <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\jQuery\jquery.validate-vsdoc.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\jQuery\jquery.validate.min.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.min.js">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Scripts\knockout-2.2.1.debug.js">
+      <DependentUpon>knockout-2.2.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\prefixfree.min.js" />
+    <Content Include="Scripts\QUnit\jquery.mockjax.js" />
+    <Content Include="Scripts\QUnit\qunit.js" />
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\qunit\qunit.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\sinon\sinon-1.5.d.ts" />
+    <TypeScriptCompile Include="Scripts\Views\StringExtensions.ts" />
+    <Content Include="Scripts\QUnit\sinon-1.5.2.js" />
+    <Content Include="Scripts\QUnit\sinon-qunit-1.0.0.js" />
+    <TypeScriptCompile Include="Scripts\Views\ServiceOffering\FileUploadComplete.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Partner\ProviderDataTable.Test.ts" />
+    <TypeScriptCompile Include="Scripts\Views\DataTable.ts" />
+    <TypeScriptCompile Include="Scripts\Views\DataFile\StudentProfileExport.ts" />
+    <TypeScriptCompile Include="Scripts\Views\CustomField\ManagePrivateHealth.ts" />
+    <TypeScriptCompile Include="Scripts\Views\CustomField\PrivateHealthFieldDataTable.ts" />
+    <Content Include="Scripts\Views\CustomField\ManagePrivateHealth.js">
+      <DependentUpon>ManagePrivateHealth.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\CustomField\ManagePublic.js">
+      <DependentUpon>ManagePublic.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\CustomField\PrivateHealthFieldDataTable.js">
+      <DependentUpon>PrivateHealthFieldDataTable.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\CustomField\PublicFieldDataTable.js">
+      <DependentUpon>PublicFieldDataTable.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\DataFile\StudentProfileExport.js">
+      <DependentUpon>StudentProfileExport.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\DataTable.js">
+      <DependentUpon>DataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Filter.ts" />
+    <TypeScriptCompile Include="Scripts\Views\DataFile\UploadWizard.ts" />
+    <TypeScriptCompile Include="Scripts\Views\CustomField\ManagePublic.ts" />
+    <TypeScriptCompile Include="Scripts\Views\CustomField\PublicFieldDataTable.ts" />
+    <Content Include="Scripts\Views\DataFile\UploadWizard.js">
+      <DependentUpon>UploadWizard.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Filter.js">
+      <DependentUpon>Filter.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ManagePage.ts" />
+    <Content Include="Scripts\Views\ManagePage.js">
+      <DependentUpon>ManagePage.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Partner\ProgramDataTable.ts" />
+    <Content Include="Scripts\Views\Partner\PartnerFilter.js">
+      <DependentUpon>PartnerFilter.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Partner\PartnerFilter.Test.ts" />
+    <Content Include="Scripts\Views\Partner\PartnerFilter.Test.js">
+      <DependentUpon>PartnerFilter.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Partner\ProgramDataTable.js">
+      <DependentUpon>ProgramDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Partner\ProgramDataTable.Test.ts" />
+    <Content Include="Scripts\Views\Partner\ProgramDataTable.Test.js">
+      <DependentUpon>ProgramDataTable.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Partner\ProviderDataTable.Test.js">
+      <DependentUpon>ProviderDataTable.Test.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Selector.ts" />
+    <Content Include="Scripts\Views\Selector.js">
+      <DependentUpon>Selector.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceAttendance\ServiceAttendance.ts" />
+    <Content Include="Scripts\Views\ServiceAttendance\ServiceAttendance.js">
+      <DependentUpon>ServiceAttendance.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceAttendance\ServiceAttendanceDataTable.ts" />
+    <Content Include="Scripts\Views\ServiceAttendance\ServiceAttendanceDataTable.js">
+      <DependentUpon>ServiceAttendanceDataTable.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\ServiceOffering\FileUploadComplete.js">
+      <DependentUpon>FileUploadComplete.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceType\ServiceTypeDataTable.Test.ts" />
+    <TypeScriptCompile Include="Scripts\Views\ServiceOffering\ServiceOfferingDataTable.Test.ts" />
+    <Content Include="Scripts\Views\ServiceOffering\ServiceOfferingDataTable.Test.js">
+      <DependentUpon>ServiceOfferingDataTable.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\ServiceType\ServiceTypeDataTable.Test.js">
+      <DependentUpon>ServiceTypeDataTable.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\StringExtensions.js">
+      <DependentUpon>StringExtensions.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\StringExtensions.Test.ts" />
+    <Content Include="Scripts\Views\StringExtensions.Test.js">
+      <DependentUpon>StringExtensions.Test.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Account\Login.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Account\UserProfile.ts" />
+    <Content Include="Scripts\Views\Account\Login.js">
+      <DependentUpon>Login.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Account\UserProfile.js">
+      <DependentUpon>UserProfile.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Partner\PartnerFilter.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Partner\ProviderDataTable.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Partner\Manage.ts" />
+    <Content Include="Scripts\Views\Partner\Manage.js">
+      <DependentUpon>Manage.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Partner\ProviderDataTable.js">
+      <DependentUpon>ProviderDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceOffering\Manage.ts" />
+    <TypeScriptCompile Include="Scripts\Views\ServiceType\Manage.ts" />
+    <Content Include="Scripts\Views\ServiceOffering\Manage.js">
+      <DependentUpon>Manage.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceOffering\ServiceOfferingDataTable.ts" />
+    <Content Include="Scripts\Views\ServiceOffering\ServiceOfferingDataTable.js">
+      <DependentUpon>ServiceOfferingDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceOffering\ServiceOfferingFilter.ts" />
+    <Content Include="Scripts\Views\ServiceOffering\ServiceOfferingFilter.js">
+      <DependentUpon>ServiceOfferingFilter.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\ServiceType\Manage.js">
+      <DependentUpon>Manage.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Service\ScheduleOffering.ts" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\ssd-datatables.js" />
+    <TypeScriptCompile Include="Scripts\Views\ServiceType\ServiceTypeDataTable.ts" />
+    <Content Include="Scripts\Views\ServiceType\ServiceTypeDataTable.js">
+      <DependentUpon>ServiceTypeDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ServiceType\ServiceTypeFilter.ts" />
+    <Content Include="Scripts\Views\ServiceType\ServiceTypeFilter.js">
+      <DependentUpon>ServiceTypeFilter.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Service\ScheduleOffering.js">
+      <DependentUpon>ScheduleOffering.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Service\ScheduleOfferingDataTable.ts" />
+    <Content Include="Scripts\Views\Service\ScheduleOfferingDataTable.js">
+      <DependentUpon>ScheduleOfferingDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Service\ScheduleOfferingFilter.ts" />
+    <Content Include="Scripts\Views\Service\ScheduleOfferingFilter.js">
+      <DependentUpon>ScheduleOfferingFilter.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\ssd.js">
+      <DependentUpon>ssd.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ssd.Test.ts" />
+    <Content Include="Scripts\Views\ssd.Test.js">
+      <DependentUpon>ssd.Test.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\StudentApproval\Manage.ts" />
+    <Content Include="Scripts\Views\StudentApproval\Manage.js">
+      <DependentUpon>Manage.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\StudentApproval\Manage.Test.ts" />
+    <Content Include="Scripts\Views\StudentApproval\Manage.Test.js">
+      <DependentUpon>Manage.Test.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\StudentApproval\StudentApprovalDataTable.ts" />
+    <Content Include="Scripts\Views\StudentApproval\StudentApprovalDataTable.js">
+      <DependentUpon>StudentApprovalDataTable.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\StudentApproval\StudentApprovalDataTable.Test.js">
+      <DependentUpon>StudentApprovalDataTable.Test.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\StudentApproval\StudentApprovalDataTable.Test.ts" />
+    <TypeScriptCompile Include="Scripts\Views\StudentApproval\StudentApprovalFilter.ts" />
+    <Content Include="Scripts\Views\StudentApproval\StudentApprovalFilter.js">
+      <DependentUpon>StudentApprovalFilter.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Student\Details.js">
+      <DependentUpon>Details.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Student\Finder.js">
+      <DependentUpon>Finder.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\UserFilter.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Student\Details.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Student\Finder.ts" />
+    <TypeScriptCompile Include="Scripts\Views\ssd.ts" />
+    <TypeScriptCompile Include="Scripts\Views\User\UserSelector.ts" />
+    <TypeScriptCompile Include="Scripts\Views\User\UserDataTable.ts" />
+    <TypeScriptCompile Include="Scripts\Views\User\Manage.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Student\StudentDataTable.ts" />
+    <Content Include="Scripts\Views\Student\StudentDataTable.js">
+      <DependentUpon>StudentDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Student\StudentFilter.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Student\StudentDataTable.Test.ts" />
+    <Content Include="Scripts\Views\Student\StudentDataTable.Test.js">
+      <DependentUpon>StudentDataTable.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Student\StudentFilter.js">
+      <DependentUpon>StudentFilter.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\Student\StudentSelector.ts" />
+    <TypeScriptCompile Include="Scripts\Views\Student\StudentFilter.Test.ts" />
+    <Content Include="Scripts\Views\Student\StudentFilter.Test.js">
+      <DependentUpon>StudentFilter.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\Student\StudentSelector.js">
+      <DependentUpon>StudentSelector.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\AccessAudit.ts" />
+    <Content Include="Scripts\Views\User\AccessAudit.js">
+      <DependentUpon>AccessAudit.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\AccessAuditDataTable.ts" />
+    <Content Include="Scripts\Views\User\AccessAuditDataTable.js">
+      <DependentUpon>AccessAuditDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\LoginAudit.ts" />
+    <Content Include="Scripts\Views\User\LoginAudit.js">
+      <DependentUpon>LoginAudit.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\LoginAuditDataTable.ts" />
+    <Content Include="Scripts\Views\User\LoginAuditDataTable.js">
+      <DependentUpon>LoginAuditDataTable.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\User\Manage.js">
+      <DependentUpon>Manage.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\User\UserDataTable.js">
+      <DependentUpon>UserDataTable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\UserDataTable.Test.ts" />
+    <Content Include="Scripts\Views\User\UserDataTable.Test.js">
+      <DependentUpon>UserDataTable.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\User\UserFilter.js">
+      <DependentUpon>UserFilter.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\User\UserFilter.Test.ts" />
+    <Content Include="Scripts\Views\User\UserFilter.Test.js">
+      <DependentUpon>UserFilter.Test.ts</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Views\User\UserSelector.js">
+      <DependentUpon>UserSelector.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Scripts\Views\ViewInterfaces.d.ts" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\NotFound.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_SingleColumnLayout.cshtml" />
+    <Content Include="Views\Shared\_TripleColumnLayout.cshtml" />
+    <Content Include="Views\Shared\_DoubleColumnLayout.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Areas\Partners\Views\Partners\Index.cshtml" />
+    <Content Include="Areas\Partners\Views\Provider\EditorTemplates\ProviderModel.cshtml" />
+    <Content Include="Areas\Partners\Views\Provider\Create.cshtml" />
+    <Content Include="Areas\Partners\Views\Provider\Delete.cshtml" />
+    <Content Include="Areas\Partners\Views\Provider\Edit.cshtml" />
+    <Content Include="Views\ServiceType\Index.cshtml" />
+    <Content Include="Views\ServiceType\EditorTemplates\ServiceTypeModel.cshtml" />
+    <Content Include="Views\ServiceType\Create.cshtml" />
+    <Content Include="Views\ServiceType\Edit.cshtml" />
+    <Content Include="Views\ServiceType\Delete.cshtml" />
+    <Content Include="Views\ServiceOffering\Index.cshtml" />
+    <Content Include="Views\ServiceOffering\Create.cshtml" />
+    <Content Include="Views\ServiceOffering\Edit.cshtml" />
+    <Content Include="Views\ServiceOffering\Delete.cshtml" />
+    <Content Include="Views\ServiceOffering\EditorTemplates\ServiceOfferingModel.cshtml" />
+    <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\ServiceRequest\Delete.cshtml" />
+    <Content Include="Views\Service\ScheduleOffering.cshtml" />
+    <Content Include="Views\ServiceRequest\Create.cshtml" />
+    <Content Include="Views\ServiceRequest\EditorTemplates\ServiceRequestModel.cshtml" />
+    <Content Include="Views\ServiceRequest\Edit.cshtml" />
+    <Content Include="Views\Service\CreateScheduledOffering.cshtml" />
+    <Content Include="Views\Service\EditorTemplates\ServiceOfferingScheduleModel.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\CreateRole.cshtml" />
+    <Content Include="Views\User\EditorTemplates\UserRoleModel.cshtml" />
+    <Content Include="Views\Shared\_Modal.cshtml" />
+    <Content Include="Views\Service\EditScheduledOffering.cshtml" />
+    <Content Include="Views\Service\DeleteScheduledOffering.cshtml" />
+    <Content Include="Views\User\EditRole.cshtml" />
+    <Content Include="Views\Shared\Favorites.cshtml" />
+    <Content Include="Views\User\UserAssociations.cshtml" />
+    <Content Include="Views\Shared\Unauthorized.cshtml" />
+    <Content Include="Scripts\jQuery\jquery.validate.min.js.map">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="Views\ServiceOffering\FileUpload.cshtml" />
+    <Content Include="Views\StudentApproval\Index.cshtml" />
+    <Content Include="Views\ServiceOffering\FileUploadComplete.cshtml" />
+    <Content Include="Views\StudentApproval\AddProviders.cshtml" />
+    <Content Include="Views\StudentApproval\RemoveProvider.cshtml" />
+    <Content Include="Views\StudentApproval\RemoveAllProvidersBySchool.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\UploadWizard.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\UploadWizard2.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\Index.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Shared\EditorTemplates\CustomFieldModel.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\Edit.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\Create.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\Delete.cshtml" />
+    <Content Include="Areas\CustomFields\Views\Public\UploadWizard3.cshtml" />
+    <Content Include="Views\User\MultiUserActivation.cshtml" />
+    <Content Include="Scripts\jQuery\jquery.validate.unobtrusive.min.js.map">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="Views\ServiceAttendance\EditorTemplates\ServiceAttendanceModel.cshtml" />
+    <Content Include="Views\ServiceAttendance\Create.cshtml" />
+    <Content Include="Views\ServiceAttendance\Delete.cshtml" />
+    <Content Include="Views\ServiceAttendance\Edit.cshtml" />
+    <Content Include="Views\ServiceAttendance\Index.cshtml" />
+    <Content Include="Areas\Partners\Views\Shared\_ProviderDataTable.cshtml" />
+    <Content Include="Areas\Partners\Views\Shared\_ProgramDataTable.cshtml" />
+    <Content Include="Views\Widget\ServiceTypeMetrics.cshtml" />
+    <Content Include="Views\Home\_ServiceTypeMetricsWidget.cshtml" />
+    <Content Include="Views\Home\_ServiceRequestsBySchoolWidget.cshtml" />
+    <Content Include="Views\Widget\ServiceRequestsBySchool.cshtml" />
+    <Content Include="Views\ServiceAttendance\FileUpload.cshtml" />
+    <Content Include="Views\Service\EditorTemplates\StudentServiceOfferingScheduleModel.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Account\_Screens.cshtml" />
+    <Content Include="Views\Shared\_Identity.cshtml" />
+    <Content Include="Views\ServiceAttendance\FileUploadComplete.cshtml" />
+    <Content Include="Views\Shared\_FerpaDisclaimer.cshtml" />
+    <Content Include="Views\DataFile\StudentProfileExport.cshtml" />
+    <Content Include="Views\School\Selector.cshtml" />
+    <Content Include="Views\CustomField\Selector.cshtml" />
+    <Content Include="Views\ServiceType\Selector.cshtml" />
+    <Content Include="Views\Grade\Selector.cshtml" />
+    <Content Include="Views\User\AccessAudit.cshtml" />
+    <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Home\Terms.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\AuditModel.cshtml" />
+    <Content Include="Views\Agreement\Admin.cshtml" />
+    <Content Include="Views\Agreement\Index.cshtml" />
+    <Content Include="Views\Agreement\UserEula.cshtml" />
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\UploadWizard.cshtml" />
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\UploadWizard2.cshtml" />
+    <Content Include="Areas\CustomFields\Views\PrivateHealth\UploadWizard3.cshtml" />
+    <Content Include="Views\User\LoginAudit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSD.Application\SSD.Application.csproj">
+      <Project>{a550ff90-892e-4587-87e3-fc0a6262fdc8}</Project>
+      <Name>SSD.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Presentation\SSD.Presentation.csproj">
+      <Project>{c6c6ab79-1aa3-4222-986b-a5a34ee5f5ea}</Project>
+      <Name>SSD.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Security\SSD.Security.csproj">
+      <Project>{8205853a-f6c0-4a66-bf99-247196a995bf}</Project>
+      <Name>SSD.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7966</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:34096/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>CERTUTIL -importPFX -f -v -p 123456 my $(ProjectDir)Certificates\SiteCertificate.pfx</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,8 @@
+﻿@model SSD.ViewModels.DeleteServiceOfferingScheduleModel
+<form id="form-remove">
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.StudentId)
+    <ul class="form">
+        <li class="clearfix">Are you sure you wish to delete <strong id="scheduledServiceOfferingToDelete">@Model.Name</strong>?</li>
+    </ul>
+</form>

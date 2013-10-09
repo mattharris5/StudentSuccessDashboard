@@ -1,0 +1,11 @@
+﻿@model SSD.ViewModels.AddStudentApprovalModel
+
+<form id="form-student-provider">
+    @Html.HiddenFor(model => model.StudentId)
+    <ul class="form">
+        <li class="clearfix">
+            <label>Provider:</label>
+            @Html.ListBoxFor(model => model.ProvidersToAdd, Model.Providers, new { title = "Select..." })
+		</li>
+    </ul>
+</form>

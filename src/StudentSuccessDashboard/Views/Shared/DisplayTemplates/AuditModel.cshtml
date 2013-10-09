@@ -1,0 +1,10 @@
+﻿@model SSD.ViewModels.AuditModel
+<p class="muted">
+    <small>Created by @Model.CreatedBy at @Model.CreateTime</small>
+</p>
+@if (Model.LastModifyTime.HasValue)
+{
+<p class="muted">
+    <small>Last modified by @Model.LastModifiedBy at @Model.LastModifyTime</small>
+</p>
+}

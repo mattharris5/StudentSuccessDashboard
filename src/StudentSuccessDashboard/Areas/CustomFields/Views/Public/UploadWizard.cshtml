@@ -1,0 +1,17 @@
+﻿@model SSD.ViewModels.UploadWizardModel
+@{
+    ViewBag.Title = "Public Data File Upload Wizard";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title{
+    <i class="icon-upload title"></i> @ViewBag.Title
+}
+
+@section buttons{
+   <div id="steps">
+        <span class="badge badge-success">1. Get File</span>
+        <span class="badge">2. Map Fields</span>
+        <span class="badge">3. Import Results</span>
+    </div>
+}
+@Html.Partial("_UploadWizard", Model)

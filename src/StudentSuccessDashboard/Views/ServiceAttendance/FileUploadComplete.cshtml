@@ -1,0 +1,58 @@
+﻿@model SSD.ViewModels.ServiceUploadModel
+@{
+    ViewBag.IsWide = true;
+    ViewBag.Title = "File Upload Complete";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+
+@section Title{
+    @if(Model.RowErrors.Count == 0)
+    {
+        <i class="icon-ok title"></i> @ViewBag.Title
+    }
+    else
+    {
+        <i class="icon-remove title"></i> @ViewBag.Title<text>d With Errors</text>
+    }
+}
+
+@section buttons{
+    <a id="redirectToServiceOffering" class="btn btn-large btn-primary" role="button" data-toggle="modal"><i class="icon-arrow-left"></i> Back to Service Offering</a>
+}
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th colspan="3">Errors 
+                @if(Model.ErrorDownloadFile != null)
+                {
+                    @Html.ActionIconLink("Download Service Offering Errors", "DownloadUploadErrors", "ServiceOffering", "icon-download", new { id = Model.ErrorDownloadFile.BlobAddress }, new { @class = "btn btn-warning btn-mini btnFileError" });
+                }
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(string error in Model.RowErrors)
+        {
+            <tr>
+                <td colspan="3"><i class="icon-chevron-right"></i> @error</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>
+                <strong>Processed Updates: </strong> @Model.ProcessedRowCount
+            </td>
+            <td>
+                <strong>Successful Updates: </strong> @Model.SuccessfulRowsCount
+            </td>
+            <td>
+                <strong>Errored Rows: </strong> @Model.RowErrors.Count
+            </td>
+        </tr>
+    </tfoot>
+</table>

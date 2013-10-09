@@ -1,0 +1,36 @@
+﻿@model SSD.ViewModels.ServiceAttendanceModel
+
+<form id="modalBody">
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.StudentAssignedOfferingId)
+    <ul class="form">
+        <li class="clearfix">
+            <label><i class="icon-asterisk required"></i> Date:</label>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-calendar"></i></span>@Html.TextBoxFor(model => model.DateAttended, new { @class = "hasDatePicker" }) @Html.ValidationMessageFor(m => m.DateAttended)
+            </div>
+        </li>
+        <li class="clearfix"><label>Subject:</label> @Html.DropDownListFor(m => m.SelectedSubjectId, Model.Subjects)</li>
+        <li class="clearfix">
+            <div class="input-prepend">
+                <label>Duration:</label>@Html.TextBoxFor(m => m.Duration, new { @id = "appendedDropdownButton" })
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        - Select -
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu DurationDropdown">
+                        @foreach (var duration in Model.Durations)
+                        {
+                            <li>
+                                <a href="#" class="durationLinks">@duration.ToString()</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="clearfix">@Html.ValidationMessageFor(m => m.Duration)</li>
+        <li class="clearfix"><label>Notes:</label> @Html.EditorFor(m => m.Notes)</li>
+    </ul>
+</form>

@@ -1,0 +1,18 @@
+﻿@model SSD.ViewModels.UploadWizardCompleteModel
+@{
+    ViewBag.Title = "Public Data Import Results";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title{
+    <i class="icon-upload title"></i> @ViewBag.Title
+}
+
+@section buttons{
+    @Html.ActionIconLink("New Public Custom Data Import", "UploadWizard", "PrivateHealth", "icon-arrow-left", new { area = "CustomFields" }, new { @class="btn btn-large btn-primary" })
+    <div id="steps">
+        <span class="badge">1. Get File</span>
+        <span class="badge">2. Map Fields</span>
+        <span class="badge badge-success">3. Import Results</span>
+    </div>
+}
+@Html.Partial("_UploadWizard3", Model)

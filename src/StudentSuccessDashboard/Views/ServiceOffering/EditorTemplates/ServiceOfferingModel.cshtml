@@ -1,0 +1,15 @@
+﻿@model SSD.ViewModels.ServiceOfferingModel
+<form id="form-addedit">
+    <ul class="form">
+        @Html.HiddenFor(m => m.Id)
+        <li class="clearfix">
+            <label>Service Type:</label> @Html.DropDownListFor(model => model.SelectedServiceTypeId, Model.ServiceTypes, new { @id = "ddlServiceTypes" })
+        </li>
+        <li class="clearfix">
+            <label>Provider:</label> @Html.DropDownListFor(model => model.SelectedProviderId, Model.Providers, new { @id = "ddlProviders" }) @Html.ValidationMessageFor(m => m.SelectedProviderId)
+        </li>
+        <li>
+            <label>Favorites:</label>@Html.CheckBoxFor(model => model.IsFavorite)&nbsp;Add to Favorites
+        </li>
+    </ul>
+</form>

@@ -1,0 +1,16 @@
+﻿@model SSD.ViewModels.StudentServiceOfferingScheduleModel
+    <form id="form-addedit">
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Name)
+        <ul class="form">
+            <li class="clearfix">
+                <label>Start Date:</label> <div class="input-prepend"><span class="add-on"><i class="icon-calendar"></i></span>@Html.TextBoxFor(model => model.StartDate, new { @class = "hasDatePicker" }) @Html.ValidationMessageFor(m => m.StartDate)</div>
+            </li>
+            <li class="clearfix">
+                <label>End Date:</label> <div class="input-prepend"><span class="add-on"><i class="icon-calendar"></i></span>@Html.TextBoxFor(model => model.EndDate, new { @class = "hasDatePicker" }) @Html.ValidationMessageFor(m => m.EndDate)</div>
+            </li>
+            <li>
+                <label>Notes:</label>@Html.TextAreaFor(model => model.Notes)
+            </li>
+        </ul>
+    </form>

@@ -1,0 +1,47 @@
+﻿@model SSD.ViewModels.UserModel
+@{
+    ViewBag.Title = "User Profile";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+
+@section Title{
+    @ViewBag.Title
+}
+
+@using (Html.BeginForm())
+{
+    <ul class="list-wrap clearfix">
+        <li>
+            <h4>Profile Information</h4>
+            <div>
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.UserKey)
+                <strong>First Name:</strong> @Html.EditorFor(model => model.FirstName) @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+            <div>
+                <strong>Last Name:</strong> @Html.EditorFor(model => model.LastName) @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+            <div>
+                <strong>Display Name:</strong> @Html.EditorFor(model => model.DisplayName) @Html.ValidationMessageFor(model => model.DisplayName)
+            </div>
+            <div>
+                <strong>Current Email:</strong> @Html.DisplayFor(model => model.EmailAddress) @Html.HiddenFor(model => model.EmailAddress)
+            </div>
+            <div>
+                <strong>Change Email:</strong> @Html.EditorFor(model => model.PendingEmail) @Html.ValidationMessageFor(model => model.PendingEmail)
+            @if (Model.EmailAddress != Model.PendingEmail)
+            {
+                <strong>(You will receive an email to confirm this change)</strong>
+            }
+            </div>
+            @if (Model.EulaAcceptanceTime != null)
+            {
+                <div>
+                    <strong>Acceptance Time:</strong> @Model.EulaAcceptanceTime <a id="eulaBtn" class="btn" role="button" data-toggle="modal" data-value="@Model.Id">View EULA</a>
+                </div>
+            }
+            <button class="btn btn-primary" type="submit" style="float:right" value="Save">Save</button>
+        </li>
+    </ul>
+}
+@Html.Partial("_Modal")

@@ -1,0 +1,8 @@
+﻿@model SSD.ViewModels.ServiceRequestModel
+<form id="flagModalBody">
+    @Html.HiddenFor(m => m.Id)
+    @Html.ValidationMessageFor(m => m.Name)
+    <ul class="form">
+        <li class="clearfix">Are you sure you wish to delete <strong id="ServiceRequestToDeleteName">@Model.Name</strong>?</li>
+    </ul>
+</form>

@@ -1,0 +1,29 @@
+﻿@model SSD.ViewModels.ProviderModel
+<h4>Provider Details</h4>
+<form id="form-addedit">
+    <ul class="form">
+        @Html.HiddenFor(m => m.Id)
+        <li class="clearfix"><label>Provider Name:</label> @Html.EditorFor(m => m.Name) @Html.ValidationMessageFor(m => m.Name)</li>
+        <li class="clearfix"><label>Address:</label> @Html.EditorFor(m => m.Address.Street)</li>
+        <li class="clearfix"><label>City:</label> @Html.EditorFor(m => m.Address.City)</li>
+        <li class="clearfix"><label>State:</label> @Html.EditorFor(m => m.Address.State)</li>
+        <li class="clearfix"><label>Zip:</label> @Html.EditorFor(m => m.Address.Zip)</li>
+        <li class="clearfix"><label>Website:</label> @Html.EditorFor(m => m.Website) @Html.ValidationMessageFor(m => m.Website)</li>
+        <li class="clearfix">
+            <label>Programs:</label>
+            <ul class="provider-program">
+                <li>
+                    @Html.ListBoxFor(model => model.SelectedPrograms, Model.Programs, new { title = "Select Program(s)" })
+                </li>
+            </ul>
+        </li>
+    </ul>
+            
+    <h4>Contact Details</h4>
+    <ul class="form">
+        <li class="clearfix"><label>Contact Name:</label> @Html.EditorFor(m => m.Contact.Name)</li>
+        <li class="clearfix"><label>Phone:</label> @Html.EditorFor(m => m.Contact.Phone)</li>
+        <li class="clearfix"><label>Email:</label> @Html.EditorFor(m => m.Contact.Email) @Html.ValidationMessageFor(m => m.Contact.Email)</li>
+        <li>@Html.ValidationSummary()</li>
+    </ul>
+</form>

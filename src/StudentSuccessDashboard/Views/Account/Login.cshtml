@@ -1,0 +1,46 @@
+﻿@model SSD.ViewModels.LoginModel
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewBag.IsAnonymousOnly = true;
+    ViewBag.Title = "Login";
+}
+
+@section Title {
+}
+
+@Html.Hidden("LoginToken")
+<div class="content-wrap clearfix">
+    <aside id="login">
+        <div id="account">
+	        <div id="loginContent" style="display:none">
+		        <div id="loginControls" style="display:none;">
+			        <div>Sign in using your account on:</div>   
+			        <ul id="identityProvidersList"></ul>
+			        <div id="moreProvidersLink" style="display:none;">
+                        <a href="#" onclick="ShowDefaultSigninPage(); return false;">Show more options</a>
+			        </div>
+		        </div>
+                <a href='http://go.microsoft.com/fwlink/?LinkID=131004' target="_blank">Login Service Privacy</a>
+	        </div>
+        </div>
+    </aside>
+
+    <section id="home">
+        <div class="text">
+            <p>The Student Success Dashboard helps teachers, service providers, principals, site coordinators, and other community leaders make more data-informed decisions around how to best serve students.  This comprehensive data management system also provides valuable information for funders and district leaders to inform higher level, systemic change.</p>
+            <h3>Key Features</h3>
+            <ul>
+                <li>Built around a school district and fully customizable to your community – your schools, partners, and data categories.</li>
+                <li>Enables integration of student-level demographic and academic data with services and support data from learning partners who serve students both in and out of school</li>
+                <li>Provides the opportunity to analyze and better understand the overall impact of outside of school service providers on student learning</li> 
+                <li>Spotlights places where schools and community partners can invest resources to have the most impact on student success</li>
+            </ul>
+        </div>
+        @Html.Partial("_Screens")
+    </section>
+</div>
+
+@section scripts{
+    <!-- This script gets the HRD metadata in JSON and calls the callback function which renders the links -->
+    <script src="https://@(Model.Namespace).accesscontrol.windows.net/v2/metadata/IdentityProviders.js?protocol=wsfederation&amp;realm=@Url.Encode(Model.Realm)&amp;reply_to=&amp;context=&amp;request_id=&amp;version=1.0&amp;callback=ShowSigninPage" type="text/javascript"></script>
+}

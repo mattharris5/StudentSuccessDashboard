@@ -1,0 +1,21 @@
+﻿@model SSD.ViewModels.EulaModel
+@{
+    ViewBag.Title = "End User License Agreement";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title{
+    <i class="icon-legal title"></i> @ViewBag.Title
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Id)
+    <pre id="EulaLicense">@Model.EulaText</pre>
+    <p>
+        By clicking on <strong>“I Agree”</strong> below, I acknowledge and agree that as an “Authorized User” of the Student Success Dashboard (the “Dashboard”), I will keep confidential any and all data that I access by means of the Dashboard; that I will only access that data in which I have a legitimate educational interest on behalf of the educational institution by which I am employed or who has otherwise granted me access; and I will only use the information for the purposes for which I was authorized access.
+    </p>
+    <p>
+        <input type="submit" value="I Agree" class="btn btn-primary" />
+        @Html.ActionLink("Logout", "LogOff", "Account")
+    </p>
+}

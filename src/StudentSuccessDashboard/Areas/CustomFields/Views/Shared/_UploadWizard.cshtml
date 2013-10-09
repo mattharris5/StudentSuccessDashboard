@@ -1,0 +1,46 @@
+﻿@model SSD.ViewModels.UploadWizardModel
+<div id="data-report" class="container-fluid"> 
+    @using (Html.BeginForm("UploadWizard", ViewContext.RouteData.Values["controller"].ToString(), new { area = "CustomFields" }, FormMethod.Post, new { @class = "upload", enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            <legend>1. Get File</legend>
+            <ul class="form template-options">
+                <li class="clearfix">
+                    <label>Get File:</label>
+                    <input name="File" id="File" type="file" accept=".csv, .tsv, .txt" /> @Html.ValidationMessage("File")
+                </li>
+                <li class="clearfix">
+                    <label>Source:</label>
+                    @Html.TextBoxFor(model => model.Source) @Html.ValidationMessageFor(model => model.Source)
+                </li>
+                <li class="clearfix">
+                    <label>Field Name Row<i class="icon icon-info-sign" rel="tooltip" title="If no column titles are defined for the file, enter 0 for 
+                    Field Name Row and 1 for First Data Row."></i>:</label> 
+                    @Html.TextBoxFor(model => model.FieldNameRow, new { @class = "medium" }) @Html.ValidationMessageFor(model => model.FieldNameRow)
+                </li>
+                <li class="clearfix">
+                    <label>Number of Fields<i class="icon icon-info-sign" rel="tooltip" title="Enter the number of custom fields you would like to import from your file."></i>:</label>
+                    @Html.TextBoxFor(model => model.NumberOfFields, new { @class = "medium" }) @Html.ValidationMessageFor(model => model.NumberOfFields)
+                </li>
+                <li class="clearfix">
+                    <label>First Data Row<i class="icon icon-info-sign" rel="tooltip" title="If no column titles are defined for the file, enter 0 for 
+                    Field Name Row and 1 for First Data Row."></i>:</label> 
+                    @Html.TextBoxFor(model => model.FirstDataRow, new { @class = "medium" }) @Html.ValidationMessageFor(model => model.FirstDataRow)
+                </li>
+                <li class="clearfix">
+                    <label>Last Data Row<i class="icon icon-info-sign" rel="tooltip" title="Enter the number of the last row you would like to import from your file. If importing all rows, you may leave this field blank."></i>:</label> 
+                    @Html.TextBoxFor(model => model.LastDataRow, new { @class = "medium" }) @Html.ValidationMessageFor(model => model.LastDataRow)
+                </li>
+                <li class="clearfix">
+                    <label>&nbsp;</label>
+                </li>
+            </ul>
+        </fieldset>
+        <ul class="pager">
+            <li>
+                <button id="btnNext" class="btn" type="submit" name="next" value="next">Next</button>
+            </li>
+        </ul>
+    }
+</div>
+@Html.Partial("_FerpaDisclaimer")

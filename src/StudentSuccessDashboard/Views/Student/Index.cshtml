@@ -1,0 +1,114 @@
+﻿@model SSD.ViewModels.StudentListOptionsModel
+@{
+    Layout = "~/Views/Shared/_DoubleColumnLayout.cshtml";
+    ViewBag.Title = "Student Finder";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+
+@section Title {
+    <i class="icon-group title"></i> @ViewBag.Title
+}
+
+@section SideContent {
+    <h5><i class="icon-search"></i> Search</h5>
+    <ul class="vert-form filter-wrap-inner">
+        <li>
+            <label><h5>First Name:</h5></label>
+            <input name="studentFirstName" id="studentFirstName" type="text">
+        </li>
+        <li>
+            <label><h5>Last Name:</h5></label>
+            <input name="studentLastName" id="studentLastName" type="text">
+        </li>
+        <li>
+            <label><h5>ID:</h5></label>
+            <input name="studentID" id="studentID" type="text">
+        </li>
+    </ul>
+    <h5><i class="icon-filter"></i> Filter By</h5>
+
+    <div id="multiOpenAccordion">
+        <h3><a href="#">Grade</a></h3>
+		<div>
+	        <select name="grades" id="grades" multiple="multiple" title="Select Grade(s)"> 
+                @foreach (var item in Model.GradeFilterList)
+                {
+                    <option value="@item.ToString()">@item.ToString()</option>
+                }
+            </select>
+        </div>
+        
+        <h3><a href="#">School</a></h3>
+		<div>
+	        <select name="schools" id="schools" multiple="multiple" title="Select School(s)">
+                @foreach (var item in Model.SchoolFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+        
+        <h3><a href="#">Service Request</a></h3>
+        <div>
+		    <select name="priorities" id="priorities" multiple="multiple" title="Select Priority">
+                @foreach (var item in Model.PriorityFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+		    <select name="requestStatuses" id="requestStatuses" multiple="multiple" title="Select Status">
+                @foreach (var item in Model.RequestStatusFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+            <select name="serviceTypeFilterList" id="serviceTypeFilterList" multiple="multiple" title="Select Service Type"> 
+                @foreach (var item in Model.ServiceTypeFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+            <select name="subjects" id="subjects" multiple="multiple" title="Select Subject">
+                @foreach (var item in Model.SubjectFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+    </div>
+}
+
+<div id="FilterHeader"></div>
+<table class="table table-striped table-bordered DataTable table-sort" id="students"> 
+	<thead>
+		<tr>
+            <th class="nosort"><sup><i class="icon-asterisk"></i></sup> Service Request</th>
+			<th>ID</th>
+            <th>Name</th>  
+            <th class="width5">Grade</th>
+            <th>School</th>   
+            <th>Assigned Service Offerings</th>            
+            <th class="nosort actions width20">
+                <span class="select-all"><input id="chkSelectAll" type="checkbox" /> Select All</span>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle  btn-mini btn-info" data-toggle="dropdown" href="#">
+                        <i class="icon-cog"></i> Actions
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a id="addServiceOfferingToStudents" href="#"><i class="icon-plus"></i> Add Service Offering to Selected Students</a></li>
+                        @if (!Model.IsProvider)
+                        {
+                            <li><a id="serviceRequestFlagModal" href="#flagModal" role="button" data-value="1" data-toggle="modal"><i class="icon-flag"></i> Request Service for Selected Student(s)</a></li>
+                        }
+                    </ul>
+                </div>
+            </th>
+		</tr>
+	</thead>
+	<tbody id="tbodyStudents">
+    </tbody>
+</table>
+@Html.Partial("_Modal")

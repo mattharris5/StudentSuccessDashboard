@@ -1,0 +1,248 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentSuccessDashboard", "StudentSuccessDashboard\StudentSuccessDashboard.csproj", "{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{96CBDD8F-D14A-4E24-8008-746DC449AC85}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Application", "SSD.Application\SSD.Application.csproj", "{A550FF90-892E-4587-87E3-FC0A6262FDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Repositories", "SSD.Repositories\SSD.Repositories.csproj", "{A7CA8F40-8887-4161-BBC6-223970D3DD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Domain", "SSD.Domain\SSD.Domain.csproj", "{EF2AC962-368A-4A39-9D68-C16531A78660}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "SSD.Models", "SSD.Models\SSD.Models.modelproj", "{883E3270-9FC2-4BB3-ADDF-4C2D79B39D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Data", "SSD.Data\SSD.Data.csproj", "{B6AE5A13-CB52-454F-9272-C053B4C04510}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D21C4E3F-8700-40AE-ADAD-ACA2CDE587DA}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		StudentSuccessDashboard.vsmdi = StudentSuccessDashboard.vsmdi
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{91F77B78-53B8-41B4-9B5D-359ACC0B0A55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{582025A1-9C21-413A-8A74-8CB25AC6BFDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{B7CB7A75-2853-4E33-97A1-542552E5EE6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.IntegrationTest", "SSD.IntegrationTest\SSD.IntegrationTest.csproj", "{63AF0D59-DC04-4A0B-98BA-CD508834B43A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{DFFF7E0F-B027-4323-999C-09EA6FECF1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Security", "SSD.Security\SSD.Security.csproj", "{8205853A-F6C0-4A66-BF99-247196A995BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Common.Test", "SSD.Common.Test\SSD.Common.Test.csproj", "{5072CCA1-FD47-4089-8537-5E1220332912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Presentation", "SSD.Presentation\SSD.Presentation.csproj", "{C6C6AB79-1AA3-4222-986B-A5A34EE5F5EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.Business", "SSD.Business\SSD.Business.csproj", "{CAE3CBF8-227D-4936-B12E-3AFA506C3AA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Linq.Translations", "Microsoft.Linq.Translations\Microsoft.Linq.Translations.csproj", "{261B06CF-E3FF-4A88-935A-A7E735CC2981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCachingProvider", "EFCachingProvider\EFCachingProvider.csproj", "{E9B10F80-134F-4DC1-BA6F-7728EF2CAE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFProviderWrapperToolkit", "EFProviderWrapperToolkit\EFProviderWrapperToolkit.csproj", "{BAF62DE6-51D0-49AB-9E4E-9240E85E9C35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFTracingProvider", "EFTracingProvider\EFTracingProvider.csproj", "{F68D53D8-8926-49CF-B556-DF818C3BCA40}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SSD.Integration.Database", "SSD.Integration.Database\SSD.Integration.Database.sqlproj", "{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "SSD.Azure", "SSD.Azure\SSD.Azure.ccproj", "{6E23E0A9-ECDB-4CE1-BB86-6FC4549F9615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSD.UnitTest", "SSD.UnitTest\SSD.UnitTest.csproj", "{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 19
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cardinalsolutions.tfspreview.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Microsoft.Linq.Translations\\Microsoft.Linq.Translations.csproj
+		SccProjectTopLevelParentUniqueName1 = StudentSuccessDashboard.sln
+		SccProjectName1 = Microsoft.Linq.Translations
+		SccLocalPath1 = Microsoft.Linq.Translations
+		SccProjectUniqueName2 = EFCachingProvider\\EFCachingProvider.csproj
+		SccProjectTopLevelParentUniqueName2 = StudentSuccessDashboard.sln
+		SccProjectName2 = EFCachingProvider
+		SccLocalPath2 = EFCachingProvider
+		SccProjectUniqueName3 = EFProviderWrapperToolkit\\EFProviderWrapperToolkit.csproj
+		SccProjectTopLevelParentUniqueName3 = StudentSuccessDashboard.sln
+		SccProjectName3 = EFProviderWrapperToolkit
+		SccLocalPath3 = EFProviderWrapperToolkit
+		SccProjectUniqueName4 = EFTracingProvider\\EFTracingProvider.csproj
+		SccProjectTopLevelParentUniqueName4 = StudentSuccessDashboard.sln
+		SccProjectName4 = EFTracingProvider
+		SccLocalPath4 = EFTracingProvider
+		SccProjectUniqueName5 = SSD.Integration.Database\\SSD.Integration.Database.sqlproj
+		SccProjectTopLevelParentUniqueName5 = StudentSuccessDashboard.sln
+		SccProjectName5 = SSD.Integration.Database
+		SccLocalPath5 = SSD.Integration.Database
+		SccProjectUniqueName6 = SSD.Azure\\SSD.Azure.ccproj
+		SccProjectTopLevelParentUniqueName6 = StudentSuccessDashboard.sln
+		SccProjectName6 = SSD.Azure
+		SccLocalPath6 = SSD.Azure
+		SccProjectUniqueName7 = SSD.Common.Test\\SSD.Common.Test.csproj
+		SccProjectTopLevelParentUniqueName7 = StudentSuccessDashboard.sln
+		SccProjectName7 = SSD.Common.Test
+		SccLocalPath7 = SSD.Common.Test
+		SccProjectUniqueName8 = SSD.IntegrationTest\\SSD.IntegrationTest.csproj
+		SccProjectTopLevelParentUniqueName8 = StudentSuccessDashboard.sln
+		SccProjectName8 = SSD.IntegrationTest
+		SccLocalPath8 = SSD.IntegrationTest
+		SccProjectUniqueName9 = SSD.UnitTest\\SSD.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName9 = StudentSuccessDashboard.sln
+		SccProjectName9 = SSD.UnitTest
+		SccLocalPath9 = SSD.UnitTest
+		SccProjectUniqueName10 = SSD.Security\\SSD.Security.csproj
+		SccProjectTopLevelParentUniqueName10 = StudentSuccessDashboard.sln
+		SccProjectName10 = SSD.Security
+		SccLocalPath10 = SSD.Security
+		SccProjectUniqueName11 = SSD.Repositories\\SSD.Repositories.csproj
+		SccProjectTopLevelParentUniqueName11 = StudentSuccessDashboard.sln
+		SccProjectName11 = SSD.Repositories
+		SccLocalPath11 = SSD.Repositories
+		SccProjectUniqueName12 = SSD.Application\\SSD.Application.csproj
+		SccProjectTopLevelParentUniqueName12 = StudentSuccessDashboard.sln
+		SccProjectName12 = SSD.Application
+		SccLocalPath12 = SSD.Application
+		SccProjectUniqueName13 = SSD.Business\\SSD.Business.csproj
+		SccProjectTopLevelParentUniqueName13 = StudentSuccessDashboard.sln
+		SccProjectName13 = SSD.Business
+		SccLocalPath13 = SSD.Business
+		SccProjectUniqueName14 = SSD.Data\\SSD.Data.csproj
+		SccProjectTopLevelParentUniqueName14 = StudentSuccessDashboard.sln
+		SccProjectName14 = SSD.Data
+		SccLocalPath14 = SSD.Data
+		SccProjectUniqueName15 = SSD.Domain\\SSD.Domain.csproj
+		SccProjectTopLevelParentUniqueName15 = StudentSuccessDashboard.sln
+		SccProjectName15 = SSD.Domain
+		SccLocalPath15 = SSD.Domain
+		SccProjectUniqueName16 = SSD.Presentation\\SSD.Presentation.csproj
+		SccProjectTopLevelParentUniqueName16 = StudentSuccessDashboard.sln
+		SccProjectName16 = SSD.Presentation
+		SccLocalPath16 = SSD.Presentation
+		SccProjectUniqueName17 = SSD.Models\\SSD.Models.modelproj
+		SccProjectTopLevelParentUniqueName17 = StudentSuccessDashboard.sln
+		SccProjectName17 = SSD.Models
+		SccLocalPath17 = SSD.Models
+		SccProjectUniqueName18 = StudentSuccessDashboard\\StudentSuccessDashboard.csproj
+		SccProjectTopLevelParentUniqueName18 = StudentSuccessDashboard.sln
+		SccProjectName18 = StudentSuccessDashboard
+		SccLocalPath18 = StudentSuccessDashboard
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A550FF90-892E-4587-87E3-FC0A6262FDC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A550FF90-892E-4587-87E3-FC0A6262FDC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A550FF90-892E-4587-87E3-FC0A6262FDC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A550FF90-892E-4587-87E3-FC0A6262FDC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CA8F40-8887-4161-BBC6-223970D3DD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CA8F40-8887-4161-BBC6-223970D3DD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CA8F40-8887-4161-BBC6-223970D3DD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CA8F40-8887-4161-BBC6-223970D3DD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2AC962-368A-4A39-9D68-C16531A78660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2AC962-368A-4A39-9D68-C16531A78660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2AC962-368A-4A39-9D68-C16531A78660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2AC962-368A-4A39-9D68-C16531A78660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883E3270-9FC2-4BB3-ADDF-4C2D79B39D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883E3270-9FC2-4BB3-ADDF-4C2D79B39D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883E3270-9FC2-4BB3-ADDF-4C2D79B39D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883E3270-9FC2-4BB3-ADDF-4C2D79B39D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6AE5A13-CB52-454F-9272-C053B4C04510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6AE5A13-CB52-454F-9272-C053B4C04510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6AE5A13-CB52-454F-9272-C053B4C04510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6AE5A13-CB52-454F-9272-C053B4C04510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AF0D59-DC04-4A0B-98BA-CD508834B43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AF0D59-DC04-4A0B-98BA-CD508834B43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AF0D59-DC04-4A0B-98BA-CD508834B43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AF0D59-DC04-4A0B-98BA-CD508834B43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8205853A-F6C0-4A66-BF99-247196A995BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8205853A-F6C0-4A66-BF99-247196A995BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8205853A-F6C0-4A66-BF99-247196A995BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8205853A-F6C0-4A66-BF99-247196A995BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5072CCA1-FD47-4089-8537-5E1220332912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5072CCA1-FD47-4089-8537-5E1220332912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5072CCA1-FD47-4089-8537-5E1220332912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5072CCA1-FD47-4089-8537-5E1220332912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6C6AB79-1AA3-4222-986B-A5A34EE5F5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C6AB79-1AA3-4222-986B-A5A34EE5F5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C6AB79-1AA3-4222-986B-A5A34EE5F5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C6AB79-1AA3-4222-986B-A5A34EE5F5EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE3CBF8-227D-4936-B12E-3AFA506C3AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE3CBF8-227D-4936-B12E-3AFA506C3AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE3CBF8-227D-4936-B12E-3AFA506C3AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE3CBF8-227D-4936-B12E-3AFA506C3AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{261B06CF-E3FF-4A88-935A-A7E735CC2981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261B06CF-E3FF-4A88-935A-A7E735CC2981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261B06CF-E3FF-4A88-935A-A7E735CC2981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261B06CF-E3FF-4A88-935A-A7E735CC2981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B10F80-134F-4DC1-BA6F-7728EF2CAE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B10F80-134F-4DC1-BA6F-7728EF2CAE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B10F80-134F-4DC1-BA6F-7728EF2CAE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B10F80-134F-4DC1-BA6F-7728EF2CAE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF62DE6-51D0-49AB-9E4E-9240E85E9C35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF62DE6-51D0-49AB-9E4E-9240E85E9C35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF62DE6-51D0-49AB-9E4E-9240E85E9C35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF62DE6-51D0-49AB-9E4E-9240E85E9C35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68D53D8-8926-49CF-B556-DF818C3BCA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68D53D8-8926-49CF-B556-DF818C3BCA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68D53D8-8926-49CF-B556-DF818C3BCA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68D53D8-8926-49CF-B556-DF818C3BCA40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6E23E0A9-ECDB-4CE1-BB86-6FC4549F9615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E23E0A9-ECDB-4CE1-BB86-6FC4549F9615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E23E0A9-ECDB-4CE1-BB86-6FC4549F9615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E23E0A9-ECDB-4CE1-BB86-6FC4549F9615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1CFE029C-33B1-4B62-A50F-2AD616BCEF3A} = {B7CB7A75-2853-4E33-97A1-542552E5EE6D}
+		{A7CA8F40-8887-4161-BBC6-223970D3DD68} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{EF2AC962-368A-4A39-9D68-C16531A78660} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{B6AE5A13-CB52-454F-9272-C053B4C04510} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{A550FF90-892E-4587-87E3-FC0A6262FDC8} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{8205853A-F6C0-4A66-BF99-247196A995BF} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{C6C6AB79-1AA3-4222-986B-A5A34EE5F5EA} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{CAE3CBF8-227D-4936-B12E-3AFA506C3AA0} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{261B06CF-E3FF-4A88-935A-A7E735CC2981} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{E9B10F80-134F-4DC1-BA6F-7728EF2CAE58} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{BAF62DE6-51D0-49AB-9E4E-9240E85E9C35} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{F68D53D8-8926-49CF-B556-DF818C3BCA40} = {582025A1-9C21-413A-8A74-8CB25AC6BFDE}
+		{883E3270-9FC2-4BB3-ADDF-4C2D79B39D75} = {D21C4E3F-8700-40AE-ADAD-ACA2CDE587DA}
+		{63AF0D59-DC04-4A0B-98BA-CD508834B43A} = {91F77B78-53B8-41B4-9B5D-359ACC0B0A55}
+		{5072CCA1-FD47-4089-8537-5E1220332912} = {91F77B78-53B8-41B4-9B5D-359ACC0B0A55}
+		{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1} = {91F77B78-53B8-41B4-9B5D-359ACC0B0A55}
+		{A3BAD65E-70C4-4398-B2E0-B2D794AF053A} = {DFFF7E0F-B027-4323-999C-09EA6FECF1A7}
+		{6E23E0A9-ECDB-4CE1-BB86-6FC4549F9615} = {DFFF7E0F-B027-4323-999C-09EA6FECF1A7}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = StriveSSD.vsmdi
+	EndGlobalSection
+EndGlobal

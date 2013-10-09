@@ -1,0 +1,37 @@
+﻿@using System.Text
+@model IEnumerable<string>
+@{
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+    ViewBag.IsWide = true;
+    ViewBag.Title = "Unauthorized";
+}
+@section Title {
+    @ViewBag.Title
+}
+<figure id="error">
+    <img src="@Url.Content("~/Content/images/unauthorized.jpg")" alt="Unauthorized Access" width="600" height="389">
+    <figcaption>
+        @if (Model == null)
+        {
+            <p>Sorry, you do not have access to this content.</p>
+        }
+        else if (@Model.Count() == 0)
+        {
+            <p>Sorry, you do not have access to this content.  No user roles have been given.</p>
+        }
+        else
+        {
+            StringBuilder roles = new StringBuilder();
+            roles.Append(Model.Count() == 1 ? "role (" : "roles (");
+            foreach (string role in Model)
+            {
+                roles.Append(role);
+                roles.Append(", ");
+            }
+            roles.Remove(roles.Length - 2, 2);
+            roles.Append(Model.Count() == 1 ? ") does" : ") do");
+            <p>Sorry, your @roles.ToString() not allow you access to this content</p>
+        }
+        <p>Please contact the <a href="mailto:@Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("SupportEmailAddress")">support team</a> to inquire about gaining access.</p>
+    </figcaption>
+</figure>

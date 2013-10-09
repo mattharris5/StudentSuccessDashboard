@@ -1,0 +1,4 @@
+﻿@model SSD.ViewModels.SchoolSelectorModel
+
+<input type="text" id="txtFilter" placeholder="Filter by keyword"/>
+@Html.ListBoxFor(model => model.SelectedSchoolIds, Model.Schools, new { title = "All (" + Model.Schools.Count() + ")" })

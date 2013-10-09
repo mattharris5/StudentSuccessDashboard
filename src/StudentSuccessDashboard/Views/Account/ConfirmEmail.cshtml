@@ -1,0 +1,27 @@
+﻿@model SSD.ViewModels.ConfirmEmailModel
+@{
+    ViewBag.IsWide = true;
+    ViewBag.Title = "Email Confirmation";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+
+@section Title{
+    @ViewBag.Title
+}
+
+@if (Model.Success)
+{
+    <h3>Thank you, @Model.UserDisplayName!</h3>
+    <p>Your email (@Model.UserEmailAddress) has been confirmed.</p>
+}
+else
+{
+    <p>Could not confirm email address using the specified identifier.</p>
+    <p>This may be due to the following reasons:</p>
+    <ul>
+        <li>The link had already been clicked on and the email address has already been confirmed</li>
+        <li>The link is outdated because the pending email address was subsequently changed again</li>
+        <li>The email address has already been registered and confirmed with another account</li>
+    </ul>
+    <p>Contact the <a href="#">network administrator</a> to report the issue if you believe this is an error.</p>
+}

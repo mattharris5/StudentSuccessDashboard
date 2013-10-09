@@ -1,0 +1,247 @@
+﻿@model SSD.ViewModels.StudentDetailModel
+@{
+    ViewBag.IsWide = true;
+    ViewBag.Title = "Student Details";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title{
+    <i class="icon-user title"></i> @Model.Name
+}
+
+@section buttons{
+    @if (!Model.OnlyUploadedCustomField)
+    {
+    <a id="addServiceOffering" class="btn btn-large btn-primary" role="button" data-toggle="modal" data-value="@Model.Id"><i class="icon-plus"></i> Add Service Offering</a>    
+    }
+}
+
+<ul class="list-wrap clearfix">
+    <li>
+        <h4>Info</h4>
+        <ul>
+            @if (!Model.OnlyUploadedCustomField)
+            {
+                <li><strong>ID:</strong> @Model.SISId</li>
+                <li><strong>DOB:</strong> @(Model.DateOfBirth.HasValue ? Model.DateOfBirth.Value.ToShortDateString() : string.Empty)</li>
+            }
+            <li><strong>Grade:</strong> @Model.Grade</li>
+            <li><strong>School:</strong> @Model.SchoolName</li>
+        </ul>
+    </li>
+    @if (!Model.OnlyUploadedCustomField)
+    {
+    <li>
+        <h4>Contact</h4>
+        <ul>
+            <li><strong>Parent's Name:</strong> @Model.Parents</li>
+        </ul>
+    </li>
+    }
+</ul>
+@if (!Model.OnlyUploadedCustomField)
+{
+<div id="col1">
+    <h4>Service Requests</h4>
+    <table class="table table-striped table-bordered table-fixed" id="tblRequests">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Date Requested</th>
+                <th>Requested By</th>
+                <th>* Service Request</th>
+                <th class="width30">General Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var r in Model.ServiceRequests)
+        {
+            <tr>
+                <td> 
+                    <div class="btn-group">
+                        <button class="btn" data-toggle="dropdown">@r.FulfillmentDetails.OrderByDescending(f => f.CreateTime).FirstOrDefault().FulfillmentStatus.Name</button>
+                        <ul class="dropdown-menu" style="white-space:nowrap" role="menu" aria-labelledby="dropdownMenu">
+                            <li>
+                                <table class="table table-striped table-bordered table-fixed StatusTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Date Performed</th>
+                                            <th>Performed By</th>
+                                            <th>Service Offering</th>
+                                            <th class="width30">Fulfillment Reason</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var fulfillmentDetail in r.FulfillmentDetails.OrderByDescending(f => f.CreateTime).ToList())
+                                        {
+                                        <tr>
+                                            <td>
+                                                @fulfillmentDetail.FulfillmentStatus.Name
+                                            </td>
+                                            <td>
+                                                @fulfillmentDetail.CreateTime
+                                            </td>
+                                            <td>
+                                                <a href="#" class="clickover" rel="clickover" title="<strong>Contact</strong>" data-content="Email: &lt;a href='mailto:@fulfillmentDetail.CreatingUser.EmailAddress'&gt;
+                                                @fulfillmentDetail.CreatingUser.EmailAddress &lt;/a&gt;&lt;br /&gt; Display Name: @fulfillmentDetail.CreatingUser.DisplayName &lt;br /&gt; &lt;button button class='btn btn-mini popover-btn' data-toggle='button' data-dismiss='clickover' 
+                                                &gt;Close&lt;/button&gt;">@fulfillmentDetail.CreatingUser.LastName, @fulfillmentDetail.CreatingUser.FirstName</a>
+                                            </td>
+                                            <td>
+                                                @if (fulfillmentDetail.FulfilledBy != null)
+                                                {
+                                                    @fulfillmentDetail.FulfilledBy.ServiceOffering.Name
+                                                }
+                                            </td>
+                                            <td>
+                                                @fulfillmentDetail.Notes
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    @r.CreateTime
+                </td>
+                <td>
+                    <a href="#" class="clickover" rel="clickover" title="<strong>Contact</strong>" data-content="Email: &lt;a href='mailto:@r.CreatingUser.EmailAddress'&gt;
+                        @r.CreatingUser.EmailAddress&lt;/a&gt;&lt;br /&gt; Display Name: @r.CreatingUser.DisplayName &lt;br /&gt; &lt;button button class='btn btn-mini popover-btn' data-toggle='button' data-dismiss='clickover' 
+                        &gt;Close&lt;/button&gt;">@r.CreatingUser.LastName, @r.CreatingUser.FirstName</a>
+                </td>
+                <td>
+                    @string.Format("{0}/{1}", r.ServiceType.Name, r.Subject.Name)
+                </td>
+                <td></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <h4>Student Services</h4>
+    <table class="table table-striped table-bordered table-fixed" id="tblServices">
+        <thead>
+            <tr>
+                <th>Date Ordered</th>
+                <th>Service Offering</th>
+                <th>Ordered By</th>
+                <th class="width30">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var s in Model.StudentAssignedOfferings)
+        {
+            <tr>
+                <td>
+                    @s.CreateTime.ToShortDateString()
+                </td>
+                <td>
+                    @s.ServiceOffering.Name
+                </td>
+                <td>
+                    <a href="#" class="clickover" rel="clickover" title="<strong>Contact</strong>" data-content="Email: &lt;a href='mailto:@s.CreatingUser.EmailAddress'&gt;
+                        @s.CreatingUser.EmailAddress&lt;/a&gt;&lt;br /&gt; Display Name: @s.CreatingUser.DisplayName &lt;br /&gt; &lt;button button class='btn btn-mini popover-btn' data-toggle='button' data-dismiss='clickover' 
+                        &gt;Close&lt;/button&gt;">@s.CreatingUser.LastName, @s.CreatingUser.FirstName</a>
+                </td>
+                <td>
+                    @s.Notes
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+}
+<div id="col2">
+    @if (!Model.OnlyUploadedCustomField)
+    {
+    <h4>Class Schedule</h4>
+    <table class="table table-striped table-bordered table-fixed" id="tblCourses">
+        <thead>
+            <tr>
+                <th>Grade</th>
+                <th>Course</th>
+                <th>Teacher</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var c in Model.Classes)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    @c.Name
+                </td>
+                <td>
+                    <a href="#" class="clickover" rel="clickover" title="<strong>Contact</strong>" data-content="Email: &lt;a href='mailto:@c.Teacher.Email'&gt;
+                        @c.Teacher.Email&lt;/a&gt;&lt;br /&gt; Phone: @c.Teacher.Phone &lt;br /&gt; &lt;button button class='btn btn-mini popover-btn' data-toggle='button' data-dismiss='clickover' 
+                        &gt;Close&lt;/button&gt;">@c.Teacher.LastName, @c.Teacher.FirstName @c.Teacher.MiddleName</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    }
+    <h4>Custom Student Information</h4>
+    <table class="table table-striped table-bordered table-fixed" id="tblCustomFields">
+        <thead>
+            <tr>
+                <th>Custom Field</th>
+                <th>Value</th>
+                <th>Upload Date</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var custom in Model.CustomData)
+        {
+            <tr>
+                <td>
+                    @custom.FieldName
+                </td>
+                <td>
+                    @custom.Value
+                </td>
+                <td>
+                    @custom.DateCreated.ToShortDateString()
+                </td>
+                <td>
+                    @custom.Source
+                </td>
+            </tr>   
+        }
+        </tbody>
+    </table>
+    <h4>Private Health Information</h4>
+    <table class="table table-striped table-bordered table-fixed" id="tblPrivateHealthFields">
+        <thead>
+            <tr>
+                <th>Private Health Field</th>
+                <th>Value</th>
+                <th>Upload Date</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var custom in Model.CustomPrivateData)
+        {
+            <tr>
+                <td>
+                    @custom.FieldName
+                </td>
+                <td>
+                    @custom.Value
+                </td>
+                <td>
+                    @custom.DateCreated.ToShortDateString()
+                </td>
+                <td>
+                    @custom.Source
+                </td>
+            </tr>   
+        }
+        </tbody>
+    </table>
+</div>

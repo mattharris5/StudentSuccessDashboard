@@ -1,0 +1,10 @@
+﻿@model SSD.ViewModels.RemoveApprovedProvidersBySchoolModel
+
+<form id="form-remove-all-providers">
+    <ul class="form">
+        <li class="clearfix">
+            <label>School:</label>
+        </li>
+        @Html.ListBoxFor(m => m.SelectedSchools, Model.Schools)
+    </ul>
+</form>

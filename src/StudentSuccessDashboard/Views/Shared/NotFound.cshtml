@@ -1,0 +1,25 @@
+﻿@model string
+@{
+    ViewBag.IsWide = true;
+    ViewBag.Title = "Not Found";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title {
+    @ViewBag.Title
+}
+<figure id="error">
+    <img src="@Url.Content("~/Content/images/notfound.jpg")" alt="Error" width="600" height="389">
+    <figcaption>
+        <p>Sorry, the page you seek at <a href="@Model">@Model</a> cannot be found. This error typically results from:</p>
+        <ul>
+            <li>The page being moved</li>
+            <li>The page being deleted</li>
+            <li>A typo in the URL</li>
+        </ul>
+        @if (Request.UrlReferrer != null)
+        {
+            <p>Page was referred from <a href="@Request.UrlReferrer.AbsoluteUri">@Request.UrlReferrer.AbsoluteUri</a>.</p>
+        }
+        <p>Please contact the <a href="mailto:@Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("SupportEmailAddress")">support team</a> if you're unable to locate the information you're looking for.</p>
+    </figcaption>
+</figure>

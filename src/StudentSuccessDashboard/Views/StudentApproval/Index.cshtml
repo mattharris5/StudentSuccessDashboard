@@ -1,0 +1,95 @@
+﻿@model SSD.ViewModels.StudentApprovalListOptionsModel
+@{
+    Layout = "~/Views/Shared/_DoubleColumnLayout.cshtml";
+    ViewBag.Title = "Manage Student Approvals";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+
+@section Title{
+    <i class="icon-group title"></i> @ViewBag.Title
+}
+
+@section buttons{
+    <div class="btn-group">
+        <a id="removeServiceOfferingOnApprovals" class="btn btn-mini btn-danger dropdown-toggle" href="#" data-toggle="dropdown">
+            Remove Approvals from Providers
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu pull-right">
+            <li>
+                <a data-toggle="modal" id="removeApprovalsBySchool">
+                    <i class="icon-check"></i>
+                    Select and Remove Provider Approvals
+                </a>
+            </li>
+            <li>
+                <a data-toggle="modal" id="removeApprovals">
+                    <i class="icon-remove"></i>
+                    Remove All Provider Approvals (<label id="lblApprovalCount" style="display:inline">@Model.TotalStudentsWithApproval</label>)
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
+@section SideContent{
+    <h5><i class="icon-search"></i> Search</h5>
+    <ul class="vert-form filter-wrap-inner">
+        <li>
+            <label><h5>First Name:</h5></label>
+            <input name="firstName" id="firstName" type="text">
+        </li>
+        <li>
+            <label><h5>Last Name:</h5></label>
+            <input name="lastName" id="lastName" type="text">
+        </li>
+        <li>
+            <label><h5>ID:</h5></label>
+            <input name="id" id="id" type="text">
+        </li>
+    </ul>
+    <h5><i class="icon-filter"></i> Filter By</h5>
+
+    <div id="multiOpenAccordion">
+        <h3><a href="#">Provider</a></h3>
+		<div>
+	        <select name="providerFilterList" id="providerFilterList" multiple="multiple" title="Select Provider(s)">
+                @foreach (var item in Model.ProviderFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+        <h3><a href="#">School</a></h3>
+		<div>
+	        <select name="schoolsFilterList" id="schoolsFilterList" multiple="multiple" title="Select School(s)">
+                @foreach (var item in Model.SchoolFilterList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+    </div>
+}
+
+<div id="FilterHeader"></div>
+<table class="table table-striped table-bordered DataTable table-sort" id="studentApprovals"> 
+	<thead>
+		<tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Grade</th>  
+            <th>School</th>
+            <th>Approved Providers</th>   
+            <th></th>
+            <th>
+                <i class="icon-check"></i> = Parental Opt-Out
+            </th>
+		</tr>
+	</thead>
+	<tbody id="tbodyStudentApprovals">
+    </tbody>
+</table>
+@Html.Partial("_Modal")

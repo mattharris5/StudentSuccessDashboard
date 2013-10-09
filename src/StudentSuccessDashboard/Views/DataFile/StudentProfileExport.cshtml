@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Student Profile Export";
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section Title{
+    <i class="icon-file-text title"></i> @ViewBag.Title
+    <small class="muted">&nbsp;&nbsp;Select which fields you would like included in the export (excel file)</small>
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div id="school-filter-selections">
+        <h4><strong>Schools</strong></h4>
+        <div id ="schoolsList">
+            <h5 class="muted"><em>You haven't added any filters</em></h5>
+        </div>
+        <a href="#">+ Add</a>
+        <hr />
+    </div>
+    <div id="grade-filter-selections">
+        <h4><strong>Grade Level</strong></h4>
+        <div id="gradesList">
+            <h5 class="muted"><em>You haven't added any filters</em></h5>
+        </div>
+        <a href="#">+ Add</a>
+        <hr />
+    </div>
+    <div id="standard-field-selections">
+        <h4><strong>Standard Information</strong></h4>
+        <div id="standardFieldsList">
+            <h5 class="muted"><em>You haven't added any fields</em></h5>
+        </div>
+        <a href="#">+ Add</a>
+        <hr />
+    </div>
+    <div id="service-type-field-selections">
+        <h4><strong>Service Types</strong></h4>
+        <div id ="serviceTypesList">
+            <h5 class="muted"><em>You haven't added any fields</em></h5>
+        </div>
+        <a href="#">+ Add</a>
+        <hr />
+    </div>
+    <div id="custom-field-selections">
+        <h4><strong>Custom Fields</strong></h4>
+        <div id ="customFieldsList">
+            <h5 class="muted"><em>You haven't added any fields</em></h5>
+        </div>
+        <a href="#">+ Add</a>
+        <hr />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary btn-large disabled" id="btnSubmit" value="Export to Excel"></input>
+    </div>
+}
+@Html.Partial("_Modal")

@@ -1,0 +1,2 @@
+﻿@model IEnumerable<SSD.Domain.ServiceOffering>
+@Html.DropDownList("Favorites", Model.Select(s => new SelectListItem { Text = s.Name, Value = s.Id.ToString() }), "Choose Service Offering...")

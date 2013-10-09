@@ -1,0 +1,5 @@
+﻿@model SSD.ViewModels.CustomFieldSelectorModel
+
+<input type="text" id="txtFilter" placeholder="Filter by keyword"/>
+@Html.ListBoxFor(model => model.SelectedCustomFieldIds, Model.CustomFields, new { title = "All (" + Model.CustomFields.Count() + ")" })
+<footer>* Denotes a field that is private and may contain health information.</footer>

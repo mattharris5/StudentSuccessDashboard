@@ -1,0 +1,35 @@
+﻿<footer>
+    <div id="supportModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 id="myModalLabel">Support</h3>
+        </div>
+        <div class="modal-body">
+            <h5>Experiencing problems?</h5>
+            <p><a href="mailto:@Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("SupportEmailAddress")"><i class="icon-envelope"></i>Message our support team</a></p>
+            <p><a href="@Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("SupportHelpDesk")" target="_blank"><i class="icon-edit"></i>Create a Help Desk Ticket</a></p>
+        </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+</div>
+    <ul class="footer-nav">
+        <li>
+            @Html.ActionLink("About", "About", "Home")
+        </li>
+        <li>· </li>
+        <li>
+            @Html.ActionLink("Privacy Policy", "Privacy", "Home")
+        </li>
+        <li>· </li>
+        <li>
+            @Html.ActionLink("Terms of Use", "Terms", "Home")
+        </li>
+        <li>· </li>
+        <li>
+            <a data-toggle="modal" href="#" id="supportLink" onclick="event.preventDefault(); $('#supportModal').modal({ show: true });">Support</a>
+        </li>
+        <li>· </li>
+        <li>Copyright &copy; @DateTime.Now.Year, StriveTogether, LLC</li>
+    </ul>
+</footer>

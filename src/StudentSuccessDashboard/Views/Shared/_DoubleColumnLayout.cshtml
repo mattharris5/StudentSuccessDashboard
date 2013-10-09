@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.IsWide = true;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section styles {
+    @RenderSection("styles", required: false)
+}
+
+@section Title {
+    @RenderSection("Title", required: true)
+}
+
+@section buttons {
+    @RenderSection("buttons", required: false)
+}
+
+<div class="filter-wrap">
+    @RenderSection("SideContent", required: true)
+</div>
+<div class="container-fluid col2">
+    @RenderBody()
+</div>
+
+@section scripts {
+    @RenderSection("scripts", required: false)
+}

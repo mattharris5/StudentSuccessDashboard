@@ -1,0 +1,24 @@
+﻿@model SSD.ViewModels.UserAssociationsModel
+<form id="form-user-associations">
+    @Html.HiddenFor(m => m.UserName)
+    @if (Model.SchoolNames.Any())
+    {
+        <h4>Schools</h4>
+        <ul>
+            @foreach (string name in Model.SchoolNames)
+            {
+                <li>@name</li>
+            }
+        </ul>
+    }
+    @if (Model.ProviderNames.Any())
+    {
+        <h4>Providers</h4>
+        <ul>
+            @foreach (string name in Model.ProviderNames)
+            {
+                <li>@name</li>
+            }
+        </ul>
+    }
+</form>

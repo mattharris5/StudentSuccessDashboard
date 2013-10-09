@@ -1,0 +1,33 @@
+﻿<aside class="screens">
+    <h4>Screens</h4>
+    <figure>
+        <a id="imgUserManagement" data-toggle="modal"><img src="@Url.Content("~/Content/images/screenshot-user-roles.png")" /></a>
+        <figcaption>User Management</figcaption>
+    </figure>
+    <figure>
+        <a id="imgData" data-toggle="modal"><img src="@Url.Content("~/Content/images/screenshot-dashboard.jpg")" /></a>
+        <figcaption>Performance Indicators</figcaption>
+    </figure>
+    <div id="screenshotModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+            <img src="@Url.Content("~/Content/images/screenshot-user-roles-lg.png")">      
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    <div id="screenshotDataModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+            <img src="@Url.Content("~/Content/images/screenshot-dashboard-lg.jpg")">      
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</aside>

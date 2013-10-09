@@ -1,0 +1,9 @@
+﻿@model SSD.ViewModels.RemoveApprovedProviderModel
+
+<form id="form-addedit">
+    @Html.HiddenFor(m => m.ProviderId)
+    @Html.HiddenFor(m => m.StudentId)
+    <ul class="form">
+        <li class="clearfix">Are you sure you wish to remove <strong id="Name">@Model.ProviderName</strong> from @Model.StudentName?</li>
+    </ul>
+</form>

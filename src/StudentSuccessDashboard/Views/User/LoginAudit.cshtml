@@ -1,0 +1,24 @@
+﻿@model SSD.ViewModels.UserModel
+@{
+    ViewBag.Title = "Login Audit";
+    ViewBag.IsWide = true;
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+
+@section Title {
+    <i class="icon-lock title"></i> @ViewBag.Title for @Model.LastName, @Model.FirstName
+}
+
+@Html.HiddenFor(m => m.Id)
+<table class="table table-striped table-bordered DataTable table-sort" id="loginAudit">
+    <thead>
+        <tr>
+            <th>Login Time</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

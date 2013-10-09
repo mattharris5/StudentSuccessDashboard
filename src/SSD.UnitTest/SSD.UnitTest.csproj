@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F5DCF14-9B1C-46C8-AE13-29993D5CB7D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSD</RootNamespace>
+    <AssemblyName>SSD.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML">
+      <HintPath>..\packages\ClosedXML.0.68.1\lib\net40-client\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DocumentFormat.OpenXml.1.0\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.1.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.2.0.6.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\AuthenticateAndAuthorizeAttributeTest.cs" />
+    <Compile Include="ActionFilters\HandleEntityErrorAttributeTest.cs" />
+    <Compile Include="ActionFilters\UserIdentityMapAttributeTest.cs" />
+    <Compile Include="BundleConfigTest.cs" />
+    <Compile Include="Business\AccountManagerTest.cs" />
+    <Compile Include="Business\AgreementManagerTest.cs" />
+    <Compile Include="Business\BaseManagerTest.cs" />
+    <Compile Include="Business\PrivateHealthFieldManagerTest.cs" />
+    <Compile Include="Business\PublicFieldManagerTest.cs" />
+    <Compile Include="Business\ProgramManagerTest.cs" />
+    <Compile Include="Business\ProviderManagerTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\ScheduledServiceManagerTest.cs" />
+    <Compile Include="Business\SchoolDistrictManagerTest.cs" />
+    <Compile Include="Business\ServiceAttendanceManagerTest.cs" />
+    <Compile Include="Business\ServiceOfferingManagerTest.cs" />
+    <Compile Include="Business\ServiceRequestManagerTest.cs" />
+    <Compile Include="Business\ServiceTypeManagerTest.cs" />
+    <Compile Include="Business\WidgetManagerTest.cs" />
+    <Compile Include="Controllers\AccountControllerTest.cs" />
+    <Compile Include="Controllers\AgreementControllerTest.cs" />
+    <Compile Include="Controllers\BaseControllerTest.cs" />
+    <Compile Include="Controllers\CustomFieldControllerTest.cs" />
+    <Compile Include="Controllers\GradeControllerTest.cs" />
+    <Compile Include="Controllers\ModelStateExtensionsTest.cs" />
+    <Compile Include="Controllers\PrivateHealthControllerTest.cs" />
+    <Compile Include="Controllers\SchoolControllerTest.cs" />
+    <Compile Include="Controllers\WidgetContollerTest.cs" />
+    <Compile Include="Controllers\PublicControllerTest.cs" />
+    <Compile Include="Controllers\DataFileControllerTest.cs" />
+    <Compile Include="Controllers\ErrorControllerTest.cs" />
+    <Compile Include="Controllers\PartnersControllerTest.cs" />
+    <Compile Include="Controllers\ProgramControllerTest.cs" />
+    <Compile Include="Controllers\ProviderControllerTest.cs" />
+    <Compile Include="Controllers\ServiceAttendanceControllerTest.cs" />
+    <Compile Include="Controllers\ServiceOfferingControllerTest.cs" />
+    <Compile Include="Controllers\ServiceRequestControllerTest.cs" />
+    <Compile Include="Controllers\ServiceTypeControllerTest.cs" />
+    <Compile Include="Controllers\StudentApprovalControllerTest.cs" />
+    <Compile Include="Controllers\StudentControllerTest.cs" />
+    <Compile Include="Controllers\ServiceControllerTest.cs" />
+    <Compile Include="Controllers\UserControllerTest.cs" />
+    <Compile Include="DataAnnotations\DoesNotContainAttributeTest.cs" />
+    <Compile Include="DataAnnotations\FileSizeAttributeTest.cs" />
+    <Compile Include="DataAnnotations\NumericGreaterThanAttributeTest.cs" />
+    <Compile Include="DataAnnotations\NumericLessThanAttributeTest.cs" />
+    <Compile Include="DataAnnotations\RequiredElementsAttributeTest.cs" />
+    <Compile Include="DependencyInjectionConfigTest.cs" />
+    <Compile Include="DependencyInjection\BusinessLogicInstallerTest.cs" />
+    <Compile Include="DependencyInjection\CacheInstallerTest.cs" />
+    <Compile Include="DependencyInjection\CastleWindsorExtensions.cs" />
+    <Compile Include="DependencyInjection\ControllerInstallerTest.cs" />
+    <Compile Include="DependencyInjection\BlobClientInstallerTest.cs" />
+    <Compile Include="DependencyInjection\UserAuditorInstallerTest.cs" />
+    <Compile Include="DependencyInjection\DataContextConfiguratorInstallerTest.cs" />
+    <Compile Include="DependencyInjection\FileProcessorInstallerTest.cs" />
+    <Compile Include="DependencyInjection\DataTableBinderInstallerTest.cs" />
+    <Compile Include="DependencyInjection\MailerInstallerTest.cs" />
+    <Compile Include="DependencyInjection\EmailConfirmationManagerInstallerTest.cs" />
+    <Compile Include="Domain\CustomDataOriginTest.cs" />
+    <Compile Include="Domain\CustomFieldTest.cs" />
+    <Compile Include="Domain\LoginEventTest.cs" />
+    <Compile Include="Domain\PrivateHealthDataViewEventTest.cs" />
+    <Compile Include="Domain\ProgramTest.cs" />
+    <Compile Include="Domain\SchoolTest.cs" />
+    <Compile Include="Domain\ServiceAttendanceTest.cs" />
+    <Compile Include="Domain\ServiceRequestFulfillmentTest.cs" />
+    <Compile Include="Domain\ServiceRequestTest.cs" />
+    <Compile Include="Domain\ServiceTypeTest.cs" />
+    <Compile Include="Domain\StudentAssignedOfferingTest.cs" />
+    <Compile Include="Domain\UserAccessChangeEventTest.cs" />
+    <Compile Include="Domain\UserRoleTest.cs" />
+    <Compile Include="IO\DataFileParserTest.cs" />
+    <Compile Include="IO\DataFileWriterTest.cs" />
+    <Compile Include="IO\ExcelUtilityTest.cs" />
+    <Compile Include="IO\ExportFileFactoryTest.cs" />
+    <Compile Include="IO\StudentProfileExportFieldDescriptorTest.cs" />
+    <Compile Include="IO\StudentProfileExportDataMapperTest.cs" />
+    <Compile Include="IO\StudentProfileExportFileTest.cs" />
+    <Compile Include="IO\ServiceAttendanceFileProcessorTest.cs" />
+    <Compile Include="IO\ServiceOfferingFileProcessorTest.cs" />
+    <Compile Include="IO\WorksheetWriterTest.cs" />
+    <Compile Include="IO\AzureBlobClientFactoryTest.cs" />
+    <Compile Include="IO\AzureBlobClientTest.cs" />
+    <Compile Include="Repository\LoginEventRepositoryTest.cs" />
+    <Compile Include="Repository\EulaAcceptanceRepositoryTest.cs" />
+    <Compile Include="Repository\EulaAgreementRepositoryTest.cs" />
+    <Compile Include="Repository\FulfillmentStatusRepositoryTest.cs" />
+    <Compile Include="Repository\PrivateHealthDataViewEventRepositoryTest.cs" />
+    <Compile Include="Repository\ProgramRepositoryTest.cs" />
+    <Compile Include="Repository\ServiceAttendanceRepositoryTest.cs" />
+    <Compile Include="Repository\ServiceRequestFulfillmentRepositoryTest.cs" />
+    <Compile Include="Repository\UserAccessChangeEventRepositoryTest.cs" />
+    <Compile Include="Security\AuthenticationModuleProviderTest.cs" />
+    <Compile Include="Security\AuthenticationModuleTest.cs" />
+    <Compile Include="Security\Permissions\BasePermissionTest.cs" />
+    <Compile Include="Security\Permissions\ImportOfferingDataPermissionTest.cs" />
+    <Compile Include="Security\Permissions\ScheduleOfferingPermissionTest.cs" />
+    <Compile Include="Security\Permissions\CreateServiceRequestPermissionTest.cs" />
+    <Compile Include="Security\Permissions\ManageAssignedOfferingPermissionTest.cs" />
+    <Compile Include="Security\Permissions\ManageServiceRequestPermissionTest.cs" />
+    <Compile Include="Security\Permissions\ManageCustomFieldPermissionTest.cs" />
+    <Compile Include="Security\Permissions\ManageProviderPermissionTest.cs" />
+    <Compile Include="Security\Permissions\PermissionExtensionsTest.cs" />
+    <Compile Include="Security\Permissions\PermissionFactoryTest.cs" />
+    <Compile Include="Security\Permissions\ManageServiceAttendancePermissionTest.cs" />
+    <Compile Include="Security\Permissions\SetServiceTypePrivacyPermissionTest.cs" />
+    <Compile Include="Security\Permissions\CustomFieldDataPermissionTest.cs" />
+    <Compile Include="Security\Permissions\ViewStudentDetailPermissionTest.cs" />
+    <Compile Include="Security\UserAuditorTest.cs" />
+    <Compile Include="DependencyInjection\WindsorContainerInstallerTest.cs" />
+    <Compile Include="DependencyInjection\RepositoryContainerInstallerTest.cs" />
+    <Compile Include="DependencyInjection\SecurityConfigurationInstallerTest.cs" />
+    <Compile Include="DependencyInjection\DataContextInstallerTest.cs" />
+    <Compile Include="DependencyInjection\RepositoryInstallerTest.cs" />
+    <Compile Include="DependencyInjection\WindsorControllerFactoryTest.cs" />
+    <Compile Include="DependencyInjection\Windsor\ContainerInstallerTest.cs" />
+    <Compile Include="DataAnnotations\DoesNotEqualAttributeTest.cs" />
+    <Compile Include="Domain\ProviderTest.cs" />
+    <Compile Include="Domain\RoleTest.cs" />
+    <Compile Include="Domain\ServiceOfferingTest.cs" />
+    <Compile Include="Domain\StudentTest.cs" />
+    <Compile Include="Domain\UserTest.cs" />
+    <Compile Include="IO\ExcelParserTest.cs" />
+    <Compile Include="Repository\CustomDataOriginRepositoryTest.cs" />
+    <Compile Include="Repository\CustomFieldCategoryRepositoryTest.cs" />
+    <Compile Include="Repository\CustomFieldValueRepositoryTest.cs" />
+    <Compile Include="Repository\CustomFieldRepositoryTest.cs" />
+    <Compile Include="Repository\CustomFieldTypeRepositoryTest.cs" />
+    <Compile Include="ViewModels\DataTables\AuditLoginClientDataTableTest.cs" />
+    <Compile Include="ViewModels\PrivateHealthFieldModelTest.cs" />
+    <Compile Include="ViewModels\PublicFieldModelTest.cs" />
+    <Compile Include="ViewModels\DataTables\BaseClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\PrivateHealthFieldClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\PublicFieldClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\DataTableBinderTest.cs" />
+    <Compile Include="ViewModels\DataTables\ProgramClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\ProviderClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\RepositoryFunctionsTest.cs" />
+    <Compile Include="ViewModels\DataTables\ServiceAttendanceClientDataTableTest.cs" />
+    <Compile Include="DataAnnotations\FileTypesAttributeTest.cs" />
+    <Compile Include="IO\ExcelWriterTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Repository\PriorityRepositoryTest.cs" />
+    <Compile Include="Repository\PropertyRepositoryTest.cs" />
+    <Compile Include="Repository\RepositoryContainerTest.cs" />
+    <Compile Include="Repository\RoleRepositoryTest.cs" />
+    <Compile Include="Repository\SchoolRepositoryTest.cs" />
+    <Compile Include="Repository\ProviderRepositoryTest.cs" />
+    <Compile Include="Repository\ServiceOfferingRepositoryTest.cs" />
+    <Compile Include="Repository\ServiceTypeCategoryRepositoryTest.cs" />
+    <Compile Include="Repository\ServiceTypeRepositoryTest.cs" />
+    <Compile Include="Repository\StudentAssignedOfferingRepositoryTest.cs" />
+    <Compile Include="Repository\StudentRepositoryTest.cs" />
+    <Compile Include="Repository\SubjectRepositoryTest.cs" />
+    <Compile Include="Repository\ServiceRequestRepositoryTest.cs" />
+    <Compile Include="Repository\UserRepositoryTest.cs" />
+    <Compile Include="Repository\UserRoleRepositoryTest.cs" />
+    <Compile Include="RouteConfigTest.cs" />
+    <Compile Include="Security\AuthenticationUtilityTest.cs" />
+    <Compile Include="Security\EducationSecurityIdentityTest.cs" />
+    <Compile Include="Security\EducationSecurityPrincipalTest.cs" />
+    <Compile Include="Security\EmailConfirmationManagerTest.cs" />
+    <Compile Include="FilterConfigTest.cs" />
+    <Compile Include="ViewHelpers\ActionExtensionsTest.cs" />
+    <Compile Include="ViewModels\DataTables\ServiceOfferingClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\ServiceTypeClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\StudentApprovalClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\StudentClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\AuditAccessClientDataTableTest.cs" />
+    <Compile Include="ViewModels\DataTables\UserClientDataTableTest.cs" />
+    <Compile Include="ViewModels\EulaModelTest.cs" />
+    <Compile Include="ViewModels\StudentProfileExportModelTest.cs" />
+    <Compile Include="ViewModels\ProgramModelTest.cs" />
+    <Compile Include="ViewModels\ProviderModelTest.cs" />
+    <Compile Include="ViewModels\ServiceAttendanceModelTest.cs" />
+    <Compile Include="ViewModels\ServiceOfferingScheduleModelTest.cs" />
+    <Compile Include="ViewModels\ServiceOfferingModelTest.cs" />
+    <Compile Include="ViewModels\ServiceRequestModelTest.cs" />
+    <Compile Include="ViewModels\ServiceTypeModelTest.cs" />
+    <Compile Include="ViewModels\StudentDetailModelTest.cs" />
+    <Compile Include="ViewModels\StudentServiceOfferingScheduleModelTest.cs" />
+    <Compile Include="ViewModels\UserRoleModelTest.cs" />
+    <Compile Include="ViewModels\UserModelTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Uploads\DataFileWizard\ColumnNumberError.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\LastIntegerColumnMissingValueAndDelimiter.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\LastTextColumnMissingValue.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\DateField.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\HappyPath.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\IntegerField.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\InvalidDateField.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\InvalidIntegerField.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\InvalidStudentId.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\NoOtherFieldButIDPopulated.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Uploads\DataFileWizard\LastIntegerColumnMissingValue.txt" />
+    <None Include="App_Data\Uploads\Templates\AssignedServiceOffering.xltx" />
+    <None Include="App_Data\Uploads\Blah" />
+    <Content Include="App_Data\Uploads\DataFileWizard\StudentApprovesProviderAndHasServiceOffering.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\StudentApprovesProviderButHasNoServiceOffering.txt" />
+    <Content Include="App_Data\Uploads\DataFileWizard\StudentDoesNotApproveProviderButHasServiceOffering.txt" />
+    <Content Include="App_Data\Uploads\Templates\ServiceAttendance.xltx" />
+    <None Include="App_Data\Uploads\ValidServiceAttendanceUpload.xlsx" />
+    <None Include="packages.config" />
+    <None Include="App_Data\Uploads\HappyPath.xlsx" />
+    <None Include="App_Data\Uploads\InvalidEndDate.xlsx" />
+    <None Include="App_Data\Uploads\InvalidServiceOfferingId.xlsx" />
+    <None Include="App_Data\Uploads\InvalidStartDate.xlsx" />
+    <None Include="App_Data\Uploads\InvalidStudentId.xlsx" />
+    <None Include="App_Data\Uploads\NullNotes.xlsx" />
+    <None Include="App_Data\Uploads\NullStartEndDateAndNotesCol.xlsx" />
+    <None Include="App_Data\Uploads\NullStartEndDateCol.xlsx" />
+    <Content Include="TestData\StudentProfileExportTemplate.xltx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EFCachingProvider\EFCachingProvider.csproj">
+      <Project>{e9b10f80-134f-4dc1-ba6f-7728ef2cae58}</Project>
+      <Name>EFCachingProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Application\SSD.Application.csproj">
+      <Project>{a550ff90-892e-4587-87e3-fc0a6262fdc8}</Project>
+      <Name>SSD.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Business\SSD.Business.csproj">
+      <Project>{cae3cbf8-227d-4936-b12e-3afa506c3aa0}</Project>
+      <Name>SSD.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Common.Test\SSD.Common.Test.csproj">
+      <Project>{5072cca1-fd47-4089-8537-5e1220332912}</Project>
+      <Name>SSD.Common.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Data\SSD.Data.csproj">
+      <Project>{b6ae5a13-cb52-454f-9272-c053b4c04510}</Project>
+      <Name>SSD.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Domain\SSD.Domain.csproj">
+      <Project>{ef2ac962-368a-4a39-9d68-c16531a78660}</Project>
+      <Name>SSD.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Presentation\SSD.Presentation.csproj">
+      <Project>{c6c6ab79-1aa3-4222-986b-a5a34ee5f5ea}</Project>
+      <Name>SSD.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Repositories\SSD.Repositories.csproj">
+      <Project>{a7ca8f40-8887-4161-bbc6-223970d3dd68}</Project>
+      <Name>SSD.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSD.Security\SSD.Security.csproj">
+      <Project>{8205853a-f6c0-4a66-bf99-247196a995bf}</Project>
+      <Name>SSD.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentSuccessDashboard\StudentSuccessDashboard.csproj">
+      <Project>{1cfe029c-33b1-4b62-a50f-2ad616bcef3a}</Project>
+      <Name>StudentSuccessDashboard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+﻿<div class="sub w-controls clearfix">
+    <h4>
+        Service Types
+        <small>This chart provides a district view of all service types. For each type, you can view the number of providers currently servicing students and the percentage of students being served throughout the district.</small>
+    </h4>
+</div>
+<div id="service-type-metrics-table"></div>
+
+<script type="text/javascript">
+    widgets.push({
+        Initialize: function () {
+            $.ajax({
+                url: '/Widget/ServiceTypeMetrics',
+                success: function (data) {
+                    $('#service-type-metrics-table').html(data);
+                }
+            })
+        }
+    });
+</script>

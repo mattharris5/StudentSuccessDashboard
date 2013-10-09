@@ -1,0 +1,58 @@
+﻿@model SSD.ViewModels.PartnerListOptionsModel
+@{
+    ViewBag.Wide = true;
+    ViewBag.Title = "Manage Providers and Programs";
+    Layout = "~/Views/Shared/_DoubleColumnLayout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/DataTables/css/bundle")
+}
+
+@section SideContent{
+    <h5><i class="icon-search"></i> Search</h5>
+    <ul class="vert-form filter-wrap-inner">
+        <li>
+            <label><h5>Service Type, Provider, or Program:</h5></label>
+            <input name="autocompletePartnerName" id="autocompletePartnerName" type="text">
+        </li>
+    </ul>
+}
+
+@section Title{
+    <i class="icon-cog title"></i> @ViewBag.Title
+}
+
+@section buttons{
+    <ul>
+    @if (Model.ShowAddProvider)
+    {
+        <li class="clearfix">
+            <a id="addProvider" class="btn btn-large btn-primary" role="button" data-toggle="modal"><i class="icon-plus"></i> Add Provider</a>
+        </li>
+    }
+        <li class="clearfix">
+            <a id="addProgram" class="btn btn-large btn-primary" role="button" data-toggle="modal"><i class="icon-plus"></i> Add Program</a>
+        </li>
+    </ul>
+}
+
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="#providerPane" data-toggle="tab">Providers</a>
+        </li>
+        <li>
+            <a href="#programPane" data-toggle="tab">Programs</a>
+        </li>
+    </ul>
+
+    <div id="partner-tab-content" class="tab-content">
+        <div id="providerPane" class="tab-pane active">
+            @Html.Partial("_ProviderDataTable")
+        </div>
+        <div id="programPane" class="tab-pane">
+            @Html.Partial("_ProgramDataTable")
+        </div>
+    </div>
+</div>
+@Html.Partial("_Modal")

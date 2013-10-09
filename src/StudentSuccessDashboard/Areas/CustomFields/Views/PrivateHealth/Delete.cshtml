@@ -1,0 +1,8 @@
+﻿@model SSD.ViewModels.PrivateHealthFieldModel
+<form id="form-addedit">
+    @Html.HiddenFor(m => m.Id)
+    @Html.ValidationSummary(true)
+    <ul class="form">
+        <li class="clearfix">Are you sure you wish to delete <strong id="Name">@Model.FieldName</strong>?</li>
+    </ul>
+</form>

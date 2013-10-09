@@ -1,0 +1,10 @@
+﻿@model SSD.ViewModels.ServiceOfferingModel
+<form id="form-addedit">
+    @Html.HiddenFor(m => m.Id)
+    <ul class="form">
+        <li class="clearfix">
+            Are you sure you wish to delete <strong id="Name">@Model.Providers.Where(p => p.Selected).Single().Text @Model.ServiceTypes.Where(s => s.Selected).Single().Text</strong>?
+        </li>
+        <li>@Html.ValidationSummary()</li>
+    </ul>
+</form>

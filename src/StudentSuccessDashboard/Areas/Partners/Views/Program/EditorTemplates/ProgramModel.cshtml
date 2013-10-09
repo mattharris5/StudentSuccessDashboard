@@ -1,0 +1,42 @@
+﻿@model SSD.ViewModels.ProgramModel
+<h4>Program Details</h4>
+<form id="form-addedit">
+    <ul class="form">
+        @Html.HiddenFor(m => m.Id)
+        <li class="clearfix"><label>Program Name:</label> @Html.EditorFor(m => m.Name) @Html.ValidationMessageFor(m => m.Name)</li>
+        <li class="clearfix"><label>Start Date:</label> @Html.TextBoxFor(m => m.StartDate, new { @class = "hasDatePicker" }) @Html.ValidationMessageFor(m => m.StartDate)</li>
+        <li class="clearfix"><label>End Date:</label> @Html.TextBoxFor(m => m.EndDate, new { @class = "hasDatePicker" }) @Html.ValidationMessageFor(m => m.EndDate)</li>
+        <li class="clearfix">
+            <label>Providers:</label> 
+            <ul class="program-provider">
+                <li>
+                    @Html.ListBoxFor(model => model.SelectedProviders, Model.Providers, new { title = "Select Provider(s)" }) @Html.ValidationMessageFor(m => m.SelectedProviders)
+                </li>
+            </ul>
+        </li>
+        <li class="clearfix">
+            <label>Service Types:</label>
+            <ul class="program-serviceType">
+                <li>
+                    @Html.ListBoxFor(model => model.SelectedServiceTypes, Model.ServiceTypes, new { title = "Select Service Type(s)" }) @Html.ValidationMessageFor(m => m.SelectedServiceTypes)
+                </li>
+            </ul>
+        </li>
+        <li class="clearfix">
+            <label>Schools:</label>
+            <ul class="program-school">
+                <li>
+                    @Html.ListBoxFor(model => model.SelectedSchools, Model.Schools, new { title = "Select School(s)" })
+                    </li>
+                </ul>
+            </li>
+        <li class="clearfix"><label>Description:</label> @Html.TextAreaFor(m => m.Purpose)</li>
+    </ul>
+            
+    <h4>Contact Details</h4>
+    <ul class="form">
+        <li class="clearfix"><label>Contact Name:</label> @Html.EditorFor(m => m.ContactName)</li>
+        <li class="clearfix"><label>Phone:</label> @Html.EditorFor(m => m.ContactPhone)</li>
+        <li class="clearfix"><label>Email:</label> @Html.EditorFor(m => m.ContactEmail) @Html.ValidationMessageFor(m => m.ContactEmail)</li>
+    </ul>
+</form>

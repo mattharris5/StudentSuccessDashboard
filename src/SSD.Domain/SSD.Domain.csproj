@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF2AC962-368A-4A39-9D68-C16531A78660}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSD</RootNamespace>
+    <AssemblyName>SSD.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAnnotations\DoesNotContainAttribute.cs" />
+    <Compile Include="DataAnnotations\DoesNotEqualAttribute.cs" />
+    <Compile Include="DataAnnotations\RequiredElementsAttribute.cs" />
+    <Compile Include="Domain\Address.cs" />
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\Class.cs" />
+    <Compile Include="Domain\CustomDataOrigin.cs" />
+    <Compile Include="Domain\CustomField.cs" />
+    <Compile Include="Domain\CustomFieldValue.cs" />
+    <Compile Include="Domain\CustomFieldType.cs" />
+    <Compile Include="Domain\Contact.cs" />
+    <Compile Include="Domain\CustomFieldCategory.cs" />
+    <Compile Include="Domain\EulaAcceptance.cs" />
+    <Compile Include="Domain\EulaAgreement.cs" />
+    <Compile Include="Domain\IAuditCreate.cs" />
+    <Compile Include="Domain\IAuditModify.cs" />
+    <Compile Include="Domain\LoginEvent.cs" />
+    <Compile Include="Domain\PrivateHealthDataViewEvent.cs" />
+    <Compile Include="Domain\Priority.cs" />
+    <Compile Include="Domain\PrivateHealthField.cs" />
+    <Compile Include="Domain\Program.cs" />
+    <Compile Include="Domain\Property.cs" />
+    <Compile Include="Domain\Provider.cs" />
+    <Compile Include="Domain\FulfillmentStatus.cs" />
+    <Compile Include="Domain\PublicField.cs" />
+    <Compile Include="Domain\School.cs" />
+    <Compile Include="Domain\ServiceAttendance.cs" />
+    <Compile Include="Domain\ServiceOffering.cs" />
+    <Compile Include="Domain\ServiceRequest.cs" />
+    <Compile Include="Domain\ServiceRequestFulfillment.cs" />
+    <Compile Include="Domain\ServiceType.cs" />
+    <Compile Include="Domain\Student.cs" />
+    <Compile Include="Domain\StudentAssignedOffering.cs" />
+    <Compile Include="Domain\Subject.cs" />
+    <Compile Include="Domain\Teacher.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\UserAccessChangeEvent.cs" />
+    <Compile Include="Domain\UserRole.cs" />
+    <Compile Include="EntityNotFoundException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Statuses.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Domain\DomainModel.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Linq.Translations\Microsoft.Linq.Translations.csproj">
+      <Project>{261b06cf-e3ff-4a88-935a-a7e735cc2981}</Project>
+      <Name>Microsoft.Linq.Translations</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

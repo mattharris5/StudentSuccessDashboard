@@ -1,0 +1,5 @@
+﻿@using (Html.BeginForm("FileUpload", "ServiceOffering", FormMethod.Post, new { id = "form-fileUpload", enctype = "multipart/form-data" }))
+{
+    <input name="File" id="File" type="file" />
+}
+@Html.Partial("_FerpaDisclaimer")

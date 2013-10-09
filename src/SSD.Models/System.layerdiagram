@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a813f0c0-e9b9-43aa-910a-fc6c07da56b5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" name="Shared Domain">
+      <references>
+        <reference Id="5e7e6d25-0c16-4062-a72b-799ff56163c1" name="SSD.Domain">
+          <ArtifactNode Label="SSD.Domain" Category="CodeSchema_Project" Id="(Assembly=../SSD.Domain/SSD.Domain.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Domain)" Label="SSD.Domain.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="bb1cb96b-1b09-4e27-9f5b-dc25d92d0fae" name="Security">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="15f6d14c-fea9-436a-9247-dd6187d462db" direction="Forward">
+          <layerMoniker Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="8503e7d4-0a34-41ef-98b3-2be658d317f1" name="SSD.Security">
+          <ArtifactNode Label="SSD.Security" Category="CodeSchema_Project" Id="(Assembly=../SSD.Security/SSD.Security.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Security)" Label="SSD.Security.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="47dba47b-1839-4c04-ad6a-80f9eb9ee0f8" name="Website">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3bb149f0-e9d9-48f7-ba77-7be71dacd18c" direction="Forward">
+          <layerMoniker Id="42a1ddb1-840d-4e99-97dc-941e47febd91" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d63600bf-694b-45b7-afba-dbadccc088cc" direction="Forward">
+          <layerMoniker Id="a8655f17-9788-4611-903c-85436f20a052" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="f283b4d4-7563-4a3a-9b49-21ba1984cca7" direction="Forward">
+          <layerMoniker Id="bb1cb96b-1b09-4e27-9f5b-dc25d92d0fae" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="9bf5acfa-3eca-468c-b24b-f63f6bf1ae2a" name="StudentSuccessDashboard">
+          <ArtifactNode Label="StudentSuccessDashboard" Category="CodeSchema_Project" Id="(Assembly=../StudentSuccessDashboard/StudentSuccessDashboard.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=StudentSuccessDashboard)" Label="StudentSuccessDashboard.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="a8655f17-9788-4611-903c-85436f20a052" name="Presentation Logic">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="14087c91-95d8-4a01-8fd4-6d8cb7edc920" direction="Forward">
+          <layerMoniker Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="2512aff7-1e3d-4331-9b5a-ea025c3f182d" direction="Forward">
+          <layerMoniker Id="bb1cb96b-1b09-4e27-9f5b-dc25d92d0fae" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="71f1f7b0-2ebf-4b26-a8c6-5b47970cb6d9" name="SSD.Presentation">
+          <ArtifactNode Label="SSD.Presentation" Category="CodeSchema_Project" Id="(Assembly=../SSD.Presentation/SSD.Presentation.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Presentation)" Label="SSD.Presentation.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="42a1ddb1-840d-4e99-97dc-941e47febd91" name="Application Logic">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="3f114c67-7c47-4c08-bdc5-cd1c2658a5fd" direction="Forward">
+          <layerMoniker Id="a8655f17-9788-4611-903c-85436f20a052" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="7fa6770d-ca2f-45e7-82b5-afa596b37a6d" direction="Forward">
+          <layerMoniker Id="9a6d066b-618c-474c-b555-084b92a58864" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="8a0dca65-f5fa-4ddf-8c13-1b2221c0eee6" direction="Forward">
+          <layerMoniker Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ec2fc607-70d4-4ce7-bd4a-7ff8b46082f4" direction="Forward">
+          <layerMoniker Id="bb1cb96b-1b09-4e27-9f5b-dc25d92d0fae" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="fb989cf3-96fb-4fd5-98b1-43d32e98a33f" name="SSD.Application">
+          <ArtifactNode Label="SSD.Application" Category="CodeSchema_Project" Id="(Assembly=../SSD.Application/SSD.Application.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Application)" Label="SSD.Application.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="9a6d066b-618c-474c-b555-084b92a58864" name="Business Logic">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="28eeeee0-8cc2-4af5-84eb-7d5d1ccd5ab1" direction="Forward">
+          <layerMoniker Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="70882690-d2b4-4f9b-a794-87a4dd2b192b" direction="Forward">
+          <layerMoniker Id="a8655f17-9788-4611-903c-85436f20a052" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="c63d7df1-5d6c-45e0-aa4f-9dbc923d3af0" direction="Forward">
+          <layerMoniker Id="bb1cb96b-1b09-4e27-9f5b-dc25d92d0fae" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d01d8e76-2f74-4051-b17e-5d825f1a5d27" direction="Forward">
+          <layerMoniker Id="ea3416a7-8798-43a4-890c-c2289036a6fc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5c02b036-3fe7-4de3-a4c5-7ba59cc2accc" name="SSD.Business">
+          <ArtifactNode Label="SSD.Business" Category="CodeSchema_Project" Id="(Assembly=../SSD.Business/SSD.Business.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Business)" Label="SSD.Business.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="ea3416a7-8798-43a4-890c-c2289036a6fc" name="Repositories">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="86bf57c6-f522-4c3e-9409-f35a181a31fc" direction="Forward">
+          <layerMoniker Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="7e30c28e-2685-4259-a9d0-047e23dc9d80" direction="Forward">
+          <layerMoniker Id="cf924ac6-ce88-498a-928c-486cc7a57179" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4b846463-f19c-4edd-8ba1-8b44781d8f41" direction="Forward">
+          <layerMoniker Id="bb1cb96b-1b09-4e27-9f5b-dc25d92d0fae" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="c83065af-c55d-466f-8ea0-5a1efed21895" name="SSD.Repositories">
+          <ArtifactNode Label="SSD.Repositories" Category="CodeSchema_Project" Id="(Assembly=../SSD.Repositories/SSD.Repositories.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Repositories)" Label="SSD.Repositories.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="cf924ac6-ce88-498a-928c-486cc7a57179" name="Data">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ba89d087-3d01-4016-bb1f-b71f78a6099e" direction="Forward">
+          <layerMoniker Id="541a4201-cba2-4569-b530-dc6ca42b8cb8" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="b01a5dbf-5bfc-4324-b4df-f5c94918fa84" name="SSD.Data">
+          <ArtifactNode Label="SSD.Data" Category="CodeSchema_Project" Id="(Assembly=../SSD.Data/SSD.Data.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=SSD.Data)" Label="SSD.Data.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,55 @@
+﻿@model SSD.ViewModels.UploadWizardModel
+<div id="data-report" class="container-fluid"> 
+    @using (Html.BeginForm("UploadWizard2", ViewContext.RouteData.Values["controller"].ToString(), new { area = "CustomFields" }, FormMethod.Post, new { @class = "upload" }))
+    {
+        <fieldset>
+            <legend>2. Map Fields</legend>
+            <h4>File Info</h4>
+            @Html.HiddenFor(model => model.NumberOfFields)
+            @Html.HiddenFor(model => model.BlobAddress)
+
+            <ul class="file-info">
+                <li><strong>Source</strong>: @Html.DisplayTextFor(model => model.Source) @Html.HiddenFor(model => model.Source)</li>
+                <li><strong>Field Name Row</strong>: @Html.DisplayTextFor(model => model.FieldNameRow) @Html.HiddenFor(model => model.FieldNameRow)</li>
+                <li><strong>First Data Row</strong>: @Html.DisplayTextFor(model => model.FirstDataRow) @Html.HiddenFor(model => model.FirstDataRow)</li>
+                <li><strong>Last Data Row</strong>: @Html.DisplayTextFor(model => model.LastDataRow) @Html.HiddenFor(model => model.LastDataRow)</li>
+            </ul>
+
+            <p>Set Mappings to specify the correspondence between  Source Fields and Custom Fields.</p>
+
+            @Html.ValidationMessage("StudentId")
+
+            <table class="table table-striped table-bordered table-fixed map">
+                <thead>
+                    <tr>
+                        <td>
+                            Source Field
+                        </td>
+                        <td>
+                            Custom Field
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(var i = 0; i < Model.CustomFields.Count(); i++)
+                    {
+                        <tr>
+                            <td>
+                                @Model.CustomFields[i].Name
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(model => model.CustomFields[i].SelectedCustomFieldId, Model.CustomFields[i].CustomFields, "Select Custom Field") @Html.ValidationMessageFor(model => model.CustomFields[i].SelectedCustomFieldId)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </fieldset>
+        <ul class="pager">
+            <li>
+                <button id="btnPrevious" class="btn cancel" type="submit" name="submitButton" value="previous">Previous</button>
+                <button id="btnDataSubmit" class="btn" type="submit" name="submitButton" value="submit">Submit</button>
+            </li>
+        </ul>
+    }
+</div>

@@ -1,0 +1,9 @@
+﻿@model SSD.ViewModels.ServiceTypeModel
+<form id="add-svcs">
+    @Html.HiddenFor(m => m.Id)
+    @Html.ValidationMessageFor(m => m.Name)
+    <ul class="form">
+        <li class="clearfix">Are you sure you wish to delete <strong id="Name">@Model.Name</strong>?</li>
+        <li>@Html.ValidationSummary()</li>
+    </ul>
+</form>

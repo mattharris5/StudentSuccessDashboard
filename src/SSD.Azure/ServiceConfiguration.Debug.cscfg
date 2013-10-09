@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="SSD.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="StudentSuccessDashboard">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="[ENTER AZURE STORAGE ACCOUNT CONNECTION STRING]" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.NamedCaches" value="{&quot;caches&quot;:[{&quot;name&quot;:&quot;default&quot;,&quot;policy&quot;:{&quot;eviction&quot;:{&quot;type&quot;:0},&quot;expiration&quot;:{&quot;defaultTTL&quot;:10,&quot;isExpirable&quot;:true,&quot;type&quot;:1},&quot;serverNotification&quot;:{&quot;isEnabled&quot;:false}},&quot;secondaries&quot;:0},{&quot;name&quot;:&quot;session&quot;,&quot;policy&quot;:{&quot;eviction&quot;:{&quot;type&quot;:0},&quot;expiration&quot;:{&quot;defaultTTL&quot;:20,&quot;isExpirable&quot;:true,&quot;type&quot;:2},&quot;serverNotification&quot;:{&quot;isEnabled&quot;:false}},&quot;secondaries&quot;:0}]}" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.DiagnosticLevel" value="1" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.CacheSizePercentage" value="30" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ConfigStoreConnectionString" value="[ENTER AZURE STORAGE ACCOUNT CONNECTION STRING]" />
+      <Setting name="AdministratorEmailAddresses" value="[ENTER ADMINISTRATOR EMAIL ADDRESSES]" />
+      <Setting name="AcsNamespace" value="[ENTER ACS NAMESPACE HERE]" />
+      <Setting name="BlobCleanupInterval" value="01:00" />
+      <Setting name="StorageConnectionString" value="[ENTER AZURE STORAGE ACCOUNT CONNECTION STRING]" />
+      <Setting name="DatabaseConnectionString" value="Data Source=[ENTER AZURE DATABASE SERVER NAME].database.windows.net;Initial Catalog=SSD;Persist Security Info=True;User ID=[ENTER AZURE DATABASE USERNAME];Password=[ENTER AZURE DATABASE PASSWORD];Encrypt=true;MultipleActiveResultSets=True;Application Name=&quot;SSD Application&quot;;" />
+      <Setting name="ServiceOfferingFileContainerName" value="ssd-serviceoffering-files" />
+      <Setting name="CustomDataFileContainerName" value="ssd-datafileuploads" />
+      <Setting name="EnableDataLayerCaching" value="false" />
+      <Setting name="EnableDataLayerTracing" value="true" />
+      <Setting name="StudentProfileExportFooter" value="This report is for informational purposes only, and is based on students currently enrolled in the school district and active partner services. Federal law prohibits disclosing personal information to individuals who have not been authorized." />
+      <Setting name="FileUploadTemplatePath" value="/App_Data/Uploads/Templates" />
+      <Setting name="CacheClientName" value="default" />
+      <Setting name="EmailConfirmationFromAddress" value="DO_NOT_REPLY@StudentSuccessDashboard.com" />
+      <Setting name="EmailConfirmationFromName" value="Student Success Dashboard Administrator (DO NOT REPLY)" />
+      <Setting name="EmailConfirmationSubject" value="Student Success Dashboard Email Confirmation" />
+      <Setting name="EmailConfirmationBodyPlainText" value="You have requested a change to your email address.&#xD;&#xA;In order for this change to take affect, please copy-past this URL address into your browser:&#xD;&#xA;{0}" />
+      <Setting name="EmailConfirmationBodyHtml" value="&lt;p&gt;You have requested a change to your email address.&lt;/p&gt;&lt;p&gt;In order for this change to take affect, please click the below link:&lt;/p&gt;&lt;p&gt;&lt;a href='{0}'&gt;{0}&lt;/a&gt;&lt;/p&gt;" />
+      <Setting name="SmtpHost" value="smtp.sendgrid.net" />
+      <Setting name="SmtpPort" value="587" />
+      <Setting name="SmtpUserName" value="[ENTER SENDGRID USERNAME]" />
+      <Setting name="SmtpPassword" value="[ENTER SENDGRID PASSWORD]" />
+      <Setting name="SupportEmailAddress" value="[ENTER EMAIL ADDRESS FOR USER SUPPORT REQUESTS]" />
+      <Setting name="SupportHelpDesk" value="[ENTER URL TO SUPPORT HELP DESK]" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="SiteCertificate" thumbprint="2A6DADFDBA2C638C80F03C1BCB593131AE6E96DC" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

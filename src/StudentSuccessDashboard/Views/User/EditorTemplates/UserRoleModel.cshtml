@@ -1,0 +1,48 @@
+﻿@model SSD.ViewModels.UserRoleModel
+
+<form id="form-UserActivation">
+    @Html.HiddenFor(m => m.UserId)
+    @Html.HiddenFor(m => m.Name)
+    @if (Model.UserRoleIds != null && Model.UserRoleIds.Count() > 0)
+    {
+        foreach (int id in Model.UserRoleIds)
+        {
+            <input type="hidden" value="@id" name="UserRoleIds" id="userRoleIds" />
+        }
+    }
+    <ul class="form">
+        @Html.ValidationSummary()
+        <li class="clearfix input select">
+            <label>Role: </label>
+            @foreach (var role in Model.AvailableRoles)
+            {
+                @Html.RadioButton("PostedRoles", role.Id, (Model.SelectedRoles != null  && Model.SelectedRoles.Select(r => r.Id).Contains(role.Id)), new { id = "PostedRoles" + role.Id, @class = "UserRadButton" })
+                @Html.Label("PostedRoles" + role.Id, role.Name, new { @class = "UserRadButton" })
+            }
+            @Html.RadioButton("PostedRoles", "None", (Model.SelectedRoles == null || Model.SelectedRoles.Count() == 0), new { id = "PostedRoles4", @class = "UserRadButton" })
+            @Html.Label("PostedRoles4", "None", new { @class = "UserRadButton" })
+        </li>
+        <li id="providerSelection" class="clearfix hide">
+            <label>Provider: </label>
+            @Html.ListBoxFor(model => model.SelectedProviderIds, Model.Providers, new { title = "Select Provider(s)" })
+        </li>
+        <li id="schoolSelection" class="clearfix hide">
+            <label>School:</label>
+            <input id="allSchoolsSelected" name="allSchoolsSelected" type="hidden" value="@Model.allSchoolsSelected"/>
+            <span class="radio inline">
+                <input id="radAllSchools" name="group_name" type="radio" value="Yes" /> All Schools
+            </span>&nbsp; 
+            <span class="radio inline">
+                <input id="radSelSchools" name="group_name" type="radio" value="No" /> Select Schools
+            </span>
+        </li>
+        <li id="no_box" class="clearfix hide">
+            <label>Select Schools:</label>
+            @Html.ListBoxFor(model => model.SelectedSchoolIds, Model.Schools, new { title = "Select School(s)" })
+        </li>
+        <li class="clearfix">
+            <label>Comments:</label>
+            @Html.TextAreaFor(m => m.Comments)
+        </li>
+    </ul>
+</form>

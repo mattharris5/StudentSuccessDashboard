@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SSD.ViewModels.ServiceRequestsBySchoolModel>
+
+<div class="carousel-inner">
+    <div class="active item">
+        <ul class="school-sr clearfix">
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+               <li class="sr-wrap">
+                    <h5 title="@Model.ElementAt(i).SchoolName">@Model.ElementAt(i).SchoolName</h5>
+                    <dl class="total">
+                        <dt>Total</dt>
+                        <dd class="value">@Model.ElementAt(i).Total</dd>
+                    </dl>
+                    <div class="total-bd clearfix">
+                        <dl class="open">
+                            <dt>Open</dt>
+                            <dd class="value">@Model.ElementAt(i).Open</dd>
+                        </dl>
+                        <dl class="fulfilled">
+                            <dt>Fulfilled</dt>
+                            <dd class="value">@Model.ElementAt(i).Fulfilled</dd>
+                        </dl>
+                    </div>
+                </li>
+                if ((i + 1) % 5 == 0 && i != Model.Count() - 1)
+                {
+                    @Html.Raw("</ul></div><div class='item'><ul class='school-sr clearfix'>");
+                }
+            }
+        </ul>
+    </div>
+</div>
+            

@@ -1,0 +1,62 @@
+﻿@{
+    var mainWrapClasses = "clearfix";
+    if (ViewBag.IsWide == true)
+    {
+        mainWrapClasses += " wide";
+    }
+    if (ViewBag.IsStatic == true)
+    {
+        mainWrapClasses += " static-content";
+    }
+    if (ViewBag.IsAnonymousOnly == true)
+    {
+        mainWrapClasses += " anonymous-only";
+    }
+}
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/themes/base/bundle", "~/Content/bootstrap/bundle", "~/Content/FontAwesome/css/bundle")
+        <!--[if IE 7]>
+	        <link rel="stylesheet" type="text/css" href="/Content/FontAwesome/css/font-awesome-ie7.css">
+        <![endif]-->
+        @RenderSection("styles", required: false)
+        @Styles.Render("~/Content/bundle")
+        @Scripts.Render("~/Scripts/head/bundle")
+    </head>
+    <body>
+        @if (ViewBag.IsAnonymousOnly != true)
+        {
+            @Html.Partial("_Identity")
+        }
+        <div id="main-wrap" class="@mainWrapClasses">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div>
+                        <header>
+                            <a href="@Url.Action("Index", "Home")">
+                                <h1>Student Success Dashboard</h1>
+                                <p>Empowering Education Stakeholders to Make Data-Informed Decisions</p>
+                            </a>
+                        </header>
+                        @Html.Partial("_Menu")
+                        <div class="row-fluid">
+                            <div id="title-bar" class="clearfix">
+                                <h3>@RenderSection("Title", required: true)</h3>
+                                @RenderSection("buttons", required: false)
+                            </div>
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        @Html.Partial("_Footer")
+        @Scripts.Render("~/Scripts/Framework/bundle", "~/Scripts/Views/bundle")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
